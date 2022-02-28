@@ -1,5 +1,5 @@
 # Homie searcher
-This project's aim is to provide a searcher of homes in the Spanish territory.
+This project's aim is to provide a searcher of homes for rent all over the world.
 # Server
 
 ## Endpoints

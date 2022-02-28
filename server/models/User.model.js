@@ -9,25 +9,26 @@ const UserSchema = new Schema(
     },
     email: {
       type: String,
-      required: [true, "Indica el email."],
+      required: [true, "Provide an email address."],
       unique: true,
       lowercase: true,
       trim: true,
     },
     password: {
       type: String,
+      required: [true, "Provide a password."],
     },
     firstName: {
       type: String,
-      required: true,
+      // required: true,
     },
     lastName: {
       type: String,
-      required: true,
+      // required: true,
     },
     phone: {
       type: String,
-      required: true,
+      // required: true,
     },
     image: {
       type: String,
@@ -44,4 +45,3 @@ const UserSchema = new Schema(
   }
 );
 module.exports = model("User", UserSchema);
-
