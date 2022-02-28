@@ -8,9 +8,9 @@ const router = express.Router();
 const saltRounds = 10;
 
 router.post("/signup", (req, res, next) => {
-  const { email, password, username } = req.body;
+  const { email, password, firstName, lastName, phone } = req.body;
 
-  if (email === "" || password === "" || username === "") {
+  if (email === "" || password === "") {
     res.status(400).json({ message: "Provide email, password and name" });
     return;
   }
@@ -39,12 +39,18 @@ router.post("/signup", (req, res, next) => {
       const salt = bcrypt.genSaltSync(saltRounds);
       const hashedPassword = bcrypt.hashSync(password, salt);
 
-      return User.create({ email, password: hashedPassword, username });
+      return User.create({
+        email,
+        password: hashedPassword,
+        firstName,
+        lastName,
+        phone,
+      });
     })
     .then((createdUser) => {
-      const { email, username, _id } = createdUser;
+      const { email, _id } = createdUser;
 
-      const user = { email, username, _id };
+      const user = { email, _id };
 
       res.status(201).json({ user });
     })
@@ -70,9 +76,10 @@ router.post("/login", (req, res, next) => {
       }
 
       if (bcrypt.compareSync(password, foundUser.password)) {
-        const { _id, email, username } = foundUser;
+        const { _id, email, firstName, lastName, phone, role, image } =
+          foundUser;
 
-        const payload = { _id, email, username };
+        const payload = { _id, email, firstName, lastName, phone, role, image };
 
         const authToken = jwt.sign(payload, process.env.TOKEN_SECRET, {
           algorithm: "HS256",
