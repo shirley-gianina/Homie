@@ -1,9 +1,11 @@
 # Homie searcher
 This project’s aim is to provide a searcher of homes for rent all over the world.
 # Server
+
 ## Endpoints
+
 | Method   | Auth               | Route                             |   Description  |
-| :---         |   :---:                |          ---:    |           ---: |
+| :---     |   :---:            |          ---:                     |           ---: |
 | POST     |  Public            | ‘/signup’                         |  Mandar datos Registro                                |
 | POST     |  Public            | ‘/login’                          |  Mandar datos de inicio de sesion|
 | GET      |  Is authenticated  | ‘/logout’                         |  Cerrar sesion|
@@ -17,9 +19,11 @@ This project’s aim is to provide a searcher of homes for rent all over the wor
 |POST      |  Public            | ‘/living-places/:id/message’      |  Formulario de contacto|
 
 # Client
+
 ## Pages
+
 |Page                    |        Route                          |         Components  |
-| :---                   |   :---:                            |            ---:         |           ---: |
+| :---                   |   :---:                               |            ---:         |
 |HomePage.jsx            |      ‘/’                              |  Navigation, Carousel, HomeFilter, CityCard, Card, Footer|
 |LivingPlaces.jsx        |      ‘/living-places/?city=Madrid’    |  Navigation, Homefilter, Card, Footer|
 |LivingPlaceDetail       |      ‘/living-places/:id’             |  Navigation, Carousel, Tabs, FormContact|
