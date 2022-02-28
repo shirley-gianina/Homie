@@ -2,8 +2,8 @@
 This project’s aim is to provide a searcher of homes for rent all over the world.
 # Server
 ## Endpoints
-| Method   | Auth               | Route                             |   Description
-|-------------------------------------------------------------------------------------------------------------------------|
+| Method   | Auth               | Route                             |   Description  |
+| :---         |   :---:                |          ---:    |           ---: |
 | POST     |  Public            | ‘/signup’                         |  Mandar datos Registro                                |
 | POST     |  Public            | ‘/login’                          |  Mandar datos de inicio de sesion|
 | GET      |  Is authenticated  | ‘/logout’                         |  Cerrar sesion|
@@ -15,10 +15,11 @@ This project’s aim is to provide a searcher of homes for rent all over the wor
 | PATCH    |  Is Owner          | ‘/living-places/:id/edit’         |  Mandar datos para editar vivienda|
 | DELETE   |  Is Owner          | ‘/living-places/:id’              |  Borrar de la base de datos una vivienda|
 |POST      |  Public            | ‘/living-places/:id/message’      |  Formulario de contacto|
+
 # Client
 ## Pages
-Page                    |        Route                          |         Components
------------------------------------------------------------------------------------------------------------------------------
+Page                    |        Route                          |         Components  |
+| :---                   |   :---:                            |            ---:         |           ---: |
 HomePage.jsx            |      ‘/’                              |  Navigation, Carousel, HomeFilter, CityCard, Card, Footer|
 LivingPlaces.jsx        |      ‘/living-places/?city=Madrid’    |  Navigation, Homefilter, Card, Footer|
 LivingPlaceDetail       |      ‘/living-places/:id’             |  Navigation, Carousel, Tabs, FormContact|
@@ -27,6 +28,7 @@ Signup.jsx              |      ‘/signup’                        |  Navigatio
 Profile.jsx             |      ‘/profile’                       |  Navigation, MenuProfile, FormProfile|
 ProfileLivingPlaces.jsx |      ‘/profile/living-places’         |  Navigation, ManuProfile, TableLivingPlaces|
 ProfileMessages.jsx     |      ‘/profile/messages’              |  Navigation, MenuProfile, TableMessages|
+
 ## Server .env variables needed
 ORIGIN=http://localhost:3000
 PORT=5005
