@@ -34,6 +34,7 @@ This project’s aim is to provide a searcher of homes for rent all over the wor
 |ProfileMessages.jsx     |      ‘/profile/messages’              |  Navigation, MenuProfile, TableMessages|
 
 ## Server .env variables needed
+```
 ORIGIN=http://localhost:3000
 PORT=5005
 DB_REMOTE
@@ -44,5 +45,9 @@ CLOUDINARY_SECRET
 NODEMAILER_NAME
 NODEMAILER_KEY
 NODEMAILER_SECRET
+```
 ### Client .env variables needed
+
+```
 REACT_APP_API_URL=http://localhost:5005/api
+```
