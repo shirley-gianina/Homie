@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const userSchema = new Schema(
+const UserSchema = new Schema(
   {
     username: {
       minlength: [3, "El nombre de usuario debe tener mínimo 3 caracteres"],
@@ -17,29 +17,30 @@ const userSchema = new Schema(
     password: {
       type: String,
     },
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      default: "https://i.stack.imgur.com/l60Hf.png",
+    },
     role: {
       type: String,
-      enum: ["USER", "ADVERTISER", "ADMIN"],
+      enum: ["USER", "ADMIN"],
       default: "USER",
-    },
-
-    profile: {
-      name: {
-        type: String,
-        required: true,
-        lastName: {
-          type: String,
-          required: true,
-          image: {
-            type: String,
-            default: "https://i.stack.imgur.com/l60Hf.png",
-          },
-        },
-      },
     },
   },
   {
     timestamps: true,
   }
 );
-module.exports = model("User", userSchema);
+module.exports = model("User", UserSchema);
