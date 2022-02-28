@@ -1,8 +1,3 @@
-# Home searcher
-
-This project's aim is to provide a searcher of homes in the Spanish territory.
-
-
 
 # Server
 
