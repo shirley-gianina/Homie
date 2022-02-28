@@ -18,7 +18,7 @@ This project’s aim is to provide a searcher of homes for rent all over the wor
 
 # Client
 ## Pages
-Page                    |        Route                          |         Components  |
+|Page                    |        Route                          |         Components  |
 | :---                   |   :---:                            |            ---:         |           ---: |
 |HomePage.jsx            |      ‘/’                              |  Navigation, Carousel, HomeFilter, CityCard, Card, Footer|
 |LivingPlaces.jsx        |      ‘/living-places/?city=Madrid’    |  Navigation, Homefilter, Card, Footer|
