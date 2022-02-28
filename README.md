@@ -20,14 +20,14 @@ This project’s aim is to provide a searcher of homes for rent all over the wor
 ## Pages
 Page                    |        Route                          |         Components  |
 | :---                   |   :---:                            |            ---:         |           ---: |
-HomePage.jsx            |      ‘/’                              |  Navigation, Carousel, HomeFilter, CityCard, Card, Footer|
-LivingPlaces.jsx        |      ‘/living-places/?city=Madrid’    |  Navigation, Homefilter, Card, Footer|
-LivingPlaceDetail       |      ‘/living-places/:id’             |  Navigation, Carousel, Tabs, FormContact|
-Login.jsx               |      ‘/login’                         |  Navigation, FormLogin|
-Signup.jsx              |      ‘/signup’                        |  Navigation, FormSignup|
-Profile.jsx             |      ‘/profile’                       |  Navigation, MenuProfile, FormProfile|
-ProfileLivingPlaces.jsx |      ‘/profile/living-places’         |  Navigation, ManuProfile, TableLivingPlaces|
-ProfileMessages.jsx     |      ‘/profile/messages’              |  Navigation, MenuProfile, TableMessages|
+|HomePage.jsx            |      ‘/’                              |  Navigation, Carousel, HomeFilter, CityCard, Card, Footer|
+|LivingPlaces.jsx        |      ‘/living-places/?city=Madrid’    |  Navigation, Homefilter, Card, Footer|
+|LivingPlaceDetail       |      ‘/living-places/:id’             |  Navigation, Carousel, Tabs, FormContact|
+|Login.jsx               |      ‘/login’                         |  Navigation, FormLogin|
+|Signup.jsx              |      ‘/signup’                        |  Navigation, FormSignup|
+|Profile.jsx             |      ‘/profile’                       |  Navigation, MenuProfile, FormProfile|
+|ProfileLivingPlaces.jsx |      ‘/profile/living-places’         |  Navigation, ManuProfile, TableLivingPlaces|
+|ProfileMessages.jsx     |      ‘/profile/messages’              |  Navigation, MenuProfile, TableMessages|
 
 ## Server .env variables needed
 ORIGIN=http://localhost:3000
