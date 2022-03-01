@@ -12,7 +12,7 @@ const Navigation = () => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand as="span">
-              <img className="mb-auto" src="/../images/homie.png" />
+              <img className="mb-auto" src="/../images/homie-verde.png" />
           </Navbar.Brand>
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
