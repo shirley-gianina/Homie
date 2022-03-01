@@ -1,6 +1,7 @@
 import { useState } from "react";
 import image1 from "../../images/carousel1.png";
 import image2 from "../../images/carousel2.png";
+import image3 from "../../images/carousel3.png";
 import { Carousel } from "react-bootstrap";
 
 function CarouselComponent() {
@@ -28,11 +29,7 @@ function CarouselComponent() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
-          alt="Third slide"
-        />
+        <img className="d-block w-100" src={image3} alt="Third slide" />
 
         <Carousel.Caption>
           <h3>Third slide label</h3>
