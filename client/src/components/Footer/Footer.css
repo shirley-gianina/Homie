@@ -4,17 +4,17 @@ footer {
     font-size: .6em;
     text-align: center;
     padding: 30px;
-   
+    /* height:140px; */
+    position: fixed;
     bottom: 0;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 300px
 }
 
 footer ul {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 footer ul li {
