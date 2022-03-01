@@ -4785,7 +4785,7 @@ a {
   text-decoration: underline;
 }
 a:hover {
-  color: #249ec8;
+  color: #00786d;
 }
 
 a:not([href]):not([class]),
@@ -8317,15 +8317,15 @@ fieldset:disabled .btn {
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #26a7d5;
-  border-color: #249ec8;
+  background-color: #00786d;
+  border-color: #007166;
 }
 .btn-check:focus + .btn-primary,
 .btn-primary:focus {
   color: #fff;
-  background-color: #26a7d5;
-  border-color: #249ec8;
-  box-shadow: 0 0 0 0.25rem rgba(77, 206, 251, 0.5);
+  background-color: #00786d;
+  border-color: #007166;
+  box-shadow: 0 0 0 0.25rem rgb(38 166 154 / 50%);
 }
 .btn-check:checked + .btn-primary,
 .btn-check:active + .btn-primary,
@@ -8333,7 +8333,7 @@ fieldset:disabled .btn {
 .btn-primary.active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #249ec8;
+  background-color: #007166;
   border-color: #2294bc;
 }
 .btn-check:checked + .btn-primary:focus,
@@ -8341,7 +8341,7 @@ fieldset:disabled .btn {
 .btn-primary:active:focus,
 .btn-primary.active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.25rem rgba(77, 206, 251, 0.5);
+  box-shadow: 0 0 0 0.25rem rgb(38 166 154 / 50%);
 }
 .btn-primary:disabled,
 .btn-primary.disabled {
@@ -8916,7 +8916,7 @@ fieldset:disabled .btn {
   text-decoration: underline;
 }
 .btn-link:hover {
-  color: #249ec8;
+  color: #007166;
 }
 .btn-link:disabled,
 .btn-link.disabled {
@@ -9399,7 +9399,7 @@ fieldset:disabled .btn {
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: #249ec8;
+  color: #007166;
 }
 .nav-link.disabled {
   color: #dfd7ca;
@@ -10121,7 +10121,7 @@ fieldset:disabled .btn {
 }
 .page-link:focus {
   z-index: 3;
-  color: #249ec8;
+  color: #007166;
   background-color: #f8f5f0;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(45, 197, 250, 0.25);
@@ -11671,7 +11671,7 @@ fieldset:disabled .btn {
 }
 .link-primary:hover,
 .link-primary:focus {
-  color: #249ec8;
+  color: #007166;
 }
 
 .link-secondary {
@@ -11860,7 +11860,7 @@ fieldset:disabled .btn {
 }
 .link-primary:hover,
 .link-primary:focus {
-  color: #249ec8;
+  color: #007166;
 }
 
 .link-secondary {
