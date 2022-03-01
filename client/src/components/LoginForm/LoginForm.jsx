@@ -49,7 +49,7 @@ function LoginForm() {
       </Form.Group>
 
       <Form.Group className="mb-3 w-100">
-        <Form.Label>Contraseña</Form.Label>
+        <Form.Label>Password</Form.Label>
         <Form.Control
           type="password"
           name="password"
@@ -59,7 +59,7 @@ function LoginForm() {
       </Form.Group>
       <div className="w-100 separator d-flex align-items-center justify-content-center text-center mt-5">
         <hr className="w-100" />
-        <p className="w-100 pt-2 text-muted px-2">O Inicia Sesion Con</p>
+        <p className="w-100 pt-2 text-muted px-2">Or login with</p>
         <hr className="w-100" />
       </div>
 
@@ -72,14 +72,14 @@ function LoginForm() {
         </button>
       </div>
       <p className="text-center mt-3 fs-5">
-        No tienes una cuenta!
+        Don't have an account? 
         <a className="text-decoration-none fw-bold" href="/registro">
-          Registrate
+          Signup
         </a>
       </p>
 
       <Button variant="primary" type="submit" style={{ width: "100%" }}>
-        Iniciar sesión
+        Login
       </Button>
     </Form>
   );
