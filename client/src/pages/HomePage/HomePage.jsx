@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import Carousel from "../../components/Carousel/Carousel";
 
 function HomePage() {
-  return (
-    <div>HomePage</div>
-  )
+  return <Carousel />;
 }
 
-export default HomePage
+export default HomePage;
