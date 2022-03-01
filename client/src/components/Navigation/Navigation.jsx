@@ -11,7 +11,9 @@ const Navigation = () => {
     <Navbar bg="white" variant="light" expand="lg" className="nav-shadow">
       <Container>
         <NavLink to="/">
-          <Navbar.Brand as="span">Homie</Navbar.Brand>
+          <Navbar.Brand as="span">
+              <img className="mb-auto" src="/../images/homie.png" />
+          </Navbar.Brand>
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
