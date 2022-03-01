@@ -2,6 +2,9 @@ import React from "react";
 import CardCarousel from "../../components/CardCarousel/CardCarousel";
 import Carousel from "../../components/Carousel/Carousel"
 
+import CityCard from "../../components/CityCard/CityCard";
+
+
 function HomePage() {
   return (
     <>
@@ -14,6 +17,7 @@ function HomePage() {
           "https://randomuser.me/api/portraits/men/2.jpg",
         ]}
       />
+      <CityCard />
     </>
   );
 }

@@ -1,0 +1,26 @@
+.cityCard {
+    border: 0px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-left:auto
+}
+
+.cityCard .img {
+    object-fit: cover;
+    width: 300px;
+    border-radius: 50px;
+}
+
+.cardTitle {
+    position: absolute;
+    top: 50%;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: auto;
+    margin-left: 80px;
+    font-weight: bold;
+    font-size: 30px;
+    
+}

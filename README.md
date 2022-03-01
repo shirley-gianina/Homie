@@ -26,7 +26,7 @@ This project’s aim is to provide a searcher of homes for rent all over the wor
 | :---                   |   :---:                               |            ---:         |
 |HomePage.jsx            |      ‘/’                              |  Navigation, Carousel, HomeFilter, CityCard, Card, Footer|
 |LivingPlaces.jsx        |      ‘/living-places/?city=Madrid’    |  Navigation, Homefilter, Card, Footer|
-|LivingPlaceDetail       |      ‘/living-places/:id’             |  Navigation, Carousel, Tabs, FormContact|
+|LivingPlaceDetail       |      ‘/living-places/:_id’             |  Navigation, Carousel, Tabs, FormContact|
 |Login.jsx               |      ‘/login’                         |  Navigation, FormLogin|
 |Signup.jsx              |      ‘/signup’                        |  Navigation, FormSignup|
 |Profile.jsx             |      ‘/profile’                       |  Navigation, MenuProfile, FormProfile|
