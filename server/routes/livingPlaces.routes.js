@@ -1,7 +1,7 @@
 const router = require("express").Router();
-
 const LivingPlace = require("./../models/LivingPlace.model");
 const Message = require("./../models/Message.model");
+const { isAuthenticated } = require("../middlewares/jwt.middleware");
 
 router.get("/living-places", (req, res) => {
   LivingPlace.find()
@@ -17,8 +17,17 @@ router.get("/living-places/:id", (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-router.post("/living-places", (req, res) => {
-  const { title, owner, address, price, category, condition, description, features } = req.body;
+router.post("/living-places", isAuthenticated, (req, res) => {
+  const {
+    title,
+    owner,
+    address,
+    price,
+    category,
+    condition,
+    description,
+    features,
+  } = req.body;
 
   LivingPlace.create({
     title,
@@ -34,21 +43,20 @@ router.post("/living-places", (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-router.put("/living-places/:id", (req, res) => {
+router.put("/living-places/:id", isAuthenticated, (req, res) => {
   const { id } = req.params;
-    const {
-      title,
-      owner,
-      address,
-      price,
-      category,
-      condition,
-      description,
-      features,
-    } = req.body;
+  const {
+    title,
+    owner,
+    address,
+    price,
+    category,
+    condition,
+    description,
+    features,
+  } = req.body;
 
-
-  LivingPlace.findOneAndUpdate(id, {
+  LivingPlace.findOneAndUpdate({
     title,
     owner,
     address,
@@ -62,7 +70,7 @@ router.put("/living-places/:id", (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-router.post("/living-places/:id/message", (req, res) => {
+router.post("/livingPlaces/:id/message", isAuthenticated, (req, res) => {
   const { id } = req.params;
   const { message, owner } = req.body;
 
@@ -73,7 +81,7 @@ router.post("/living-places/:id/message", (req, res) => {
   });
 });
 
-router.delete("/living-places/:id", (req, res) => {
+router.delete("/livingPlaces/:id", isAuthenticated, (req, res) => {
   const { id } = req.params;
   LivingPlace.findByIdAndDelete(id)
     .then((response) => res.json(response))

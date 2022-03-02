@@ -14,7 +14,7 @@ function SignupPage() {
           <SignupForm />
         </Col>
         <Col md={7}>
-          <img class="w-100" src="/images/login-page.png" alt="Signup" />
+          <img className="w-100" src="/images/chairs3.jpg" alt="Signup" />
         </Col>
       </Row>
     </Container>

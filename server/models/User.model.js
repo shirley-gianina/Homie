@@ -1,6 +1,10 @@
 const { Schema, model } = require("mongoose");
 const UserSchema = new Schema(
-  {
+  { 
+    
+   username: {
+    type: String,
+  },
     email: {
       type: String,
       required: [true, "Provide an email address."],
@@ -22,7 +26,6 @@ const UserSchema = new Schema(
     },
     phone: {
       type: String,
-      required: true,
     },
     image: {
       type: String,
