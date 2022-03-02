@@ -14,7 +14,7 @@ function LoginPage() {
           <LoginForm />
         </Col>
         <Col md={7}>
-          <img class="w-100" src="/images/login-page.png" alt="login" />
+          <img className="w-100" src="/images/chairs3.jpg" alt="login" />
         </Col>
       </Row>
     </Container>

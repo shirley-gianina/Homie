@@ -31,7 +31,7 @@ function LoginForm() {
         //console.log("JWT token", data.authToken)
         storeToken(data.authToken);
         authenticateUser();
-        navigate("/");
+        navigate("/profile");
       })
       .catch((err) => console.log(err));
   }
@@ -72,8 +72,8 @@ function LoginForm() {
         </button>
       </div>
       <p className="text-center mt-3 fs-5">
-        Don't have an account? 
-        <a className="text-decoration-none fw-bold" href="/registro">
+        Don't have an account?
+        <a className="text-decoration-none fw-bold" href="/">
           Signup
         </a>
       </p>

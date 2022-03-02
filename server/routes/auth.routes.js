@@ -2,7 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const User = require("../models/User.model");
 const jwt = require("jsonwebtoken");
-const { isAuthenticated } = require("./../middleware/jwt.middleware");
+const { isAuthenticated } = require("../middlewares/jwt.middleware");
 
 const router = express.Router();
 const saltRounds = 10;

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function SignupForm() {
   const [signupForm, setSignupForm] = useState({
+    username: "",
     firstName: "",
     lastName: "",
     phone: "",
@@ -28,8 +29,8 @@ function SignupForm() {
     authService
       .signup(signupForm)
       .then(({ data }) => {
-        console.log(data)
-        navigate("/login");
+        console.log(data);
+        navigate("/profile");
       })
       .catch((err) =>
         console.log("OJO QUE AQUI VAN LOS ERRORES, MENDRUGO", err)
@@ -38,7 +39,6 @@ function SignupForm() {
 
   return (
     <Form onSubmit={handleSubmit} className="signup-form">
-
       <Form.Group className="mb-3 w-100">
         <Form.Label>Firstname</Form.Label>
         <Form.Control
@@ -55,6 +55,16 @@ function SignupForm() {
           type="text"
           name="lastName"
           value={signupForm.lastName}
+          onChange={handleInputChange}
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3 w-100">
+        <Form.Label>username</Form.Label>
+        <Form.Control
+          type="text"
+          name="username"
+          value={signupForm.username}
           onChange={handleInputChange}
         />
       </Form.Group>

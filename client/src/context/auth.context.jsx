@@ -10,6 +10,7 @@ function AuthProviderWrapper(props) {
   const [user, setUser] = useState(null);
 
   const storeToken = (token) => {
+    console.log(token); //quitar
     localStorage.setItem("authToken", token);
   };
 
@@ -23,6 +24,7 @@ function AuthProviderWrapper(props) {
 
   const authenticateUser = () => {
     const storedToken = getToken();
+    setIsLoading(true);
 
     if (!storedToken) {
       logOutUser();

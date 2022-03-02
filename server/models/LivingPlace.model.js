@@ -1,7 +1,10 @@
 const { Schema, model } = require("mongoose");
 
 const LivingPlaceSchema = new Schema(
-  {
+  { title: {
+    type: String,
+    // require: true
+  },
     owner: {
       type: Schema.Types.ObjectId,
       ref: "User",
@@ -13,6 +16,9 @@ const LivingPlaceSchema = new Schema(
     imageUrl: {
       type: String,
       // required: [true, "Image is mandatory"],
+    },
+    price: {
+      type: Number
     },
     address: {
       city: {

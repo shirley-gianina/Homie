@@ -1,12 +1,12 @@
-import HomePage from "./../pages/HomePage/HomePage"
+import HomePage from "./../pages/HomePage/HomePage";
 import LivingPlacesPage from "./../pages/LivingPlacesPage/LivingPlacesPage";
 import LivingPlaceDetailPage from "./../pages/LivingPlaceDetailPage/LivingPlaceDetailPage";
 import SignupPage from "./../pages/SignupPage/SignupPage";
 import LoginPage from "./../pages/LoginPage/LoginPage";
 import ProfileLivingPlaces from "./../pages/ProfileLivingPlaces/ProfileLivingPlaces";
-import ProfilePage from "./../pages/ProfilePage/ProflePage";
+import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import ProfileMessages from "./../pages/ProfileMessages/ProfileMessages";
-
+import PrivateRoute from "./PrivateRoute";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -18,7 +18,11 @@ const AppRoutes = () => {
       <Route path="/living-places/:id" element={<LivingPlaceDetailPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/profile" element={<ProfilePage />} />
+
+      <Route path="/profile" element={<PrivateRoute />}>
+        <Route path="" element={<ProfilePage />} />
+      </Route>
+
       <Route path="/profile/living-places" element={<ProfileLivingPlaces />} />
       <Route path="/profile/messages" element={<ProfileMessages />} />
       <Route path="*" element={<h1>404</h1>} />

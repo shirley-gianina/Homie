@@ -30,7 +30,7 @@ This project’s aim is to provide a searcher of homes for rent all over the wor
 |Login.jsx               |      ‘/login’                         |  Navigation, FormLogin|
 |Signup.jsx              |      ‘/signup’                        |  Navigation, FormSignup|
 |Profile.jsx             |      ‘/profile’                       |  Navigation, MenuProfile, FormProfile|
-|ProfileLivingPlaces.jsx |      ‘/profile/living-places’         |  Navigation, ManuProfile, TableLivingPlaces|
+|ProfileLivingPlaces.jsx |      ‘/profile/living-places’         |  Navigation, MenuProfile, TableLivingPlaces|
 |ProfileMessages.jsx     |      ‘/profile/messages’              |  Navigation, MenuProfile, TableMessages|
 
 ## Server .env variables needed

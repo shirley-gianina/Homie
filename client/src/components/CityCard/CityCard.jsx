@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CityCard = () => {
   return (
     <div className="container">
-    <h3>Explore destinations</h3>
+      <img className="exploreDestinations" src="./../../images/exploredestinations.png" />
       <Card className="cityCard">
         <Card.Body>
           <Card.Img className="img" src="./../../images/newyork.jpeg" />

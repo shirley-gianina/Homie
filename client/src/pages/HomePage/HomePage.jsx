@@ -1,9 +1,7 @@
 import React from "react";
 import CardCarousel from "../../components/CardCarousel/CardCarousel";
-import Carousel from "../../components/Carousel/Carousel"
-
+import Carousel from "../../components/Carousel/Carousel";
 import CityCard from "../../components/CityCard/CityCard";
-
 
 function HomePage() {
   return (
