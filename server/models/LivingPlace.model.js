@@ -2,6 +2,10 @@ const { Schema, model } = require("mongoose");
 
 const LivingPlaceSchema = new Schema(
   {
+    title: {
+      type: String,
+      // required: [true, "Image is mandatory"],
+    },
     owner: {
       type: Schema.Types.ObjectId,
       ref: "User",
@@ -12,6 +16,10 @@ const LivingPlaceSchema = new Schema(
     },
     imageUrl: {
       type: String,
+      // required: [true, "Image is mandatory"],
+    },
+    price: {
+      type: Number,
       // required: [true, "Image is mandatory"],
     },
     address: {
@@ -56,22 +64,24 @@ const LivingPlaceSchema = new Schema(
         type: Number,
         // required: true,
       },
-      amenities: [
-        {
-          type: String,
-          enum: [
-            "elevator",
-            "heating",
-            "reduced mobility",
-            "parking",
-            "terrace",
-            "garden",
-            "swimming pool",
-            "air conditioning",
-            "pets allowed",
-          ],
-        },
-      ],
+      amenities: {
+        type: [
+          {
+            type: String,
+            enum: [
+              "elevator",
+              "heating",
+              "reduced mobility",
+              "parking",
+              "terrace",
+              "garden",
+              "swimming pool",
+              "air conditioning",
+              "pets allowed",
+            ],
+          },
+        ],
+      },
     },
   },
 

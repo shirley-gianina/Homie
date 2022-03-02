@@ -8,23 +8,23 @@ class homieService {
   }
 
   getAllLivingPlaces = () => {
-    return this.api.get("/getAllLivingPlaces");
+    return this.api.get("/living-places");
   };
 
   getOneLivingPlace = (_id) => {
-    return this.api.get(`/getOneLivingPlace/${_id}`);
+    return this.api.get(`/living-places/${_id}`);
   };
 
   createLivingPlace = (homie) => {
-    return this.api.post(`/createLivingPlace`, homie);
+    return this.api.post(`/living-places`, homie);
   };
 
   editLivingPlace = (_id) => {
-    return this.api.put(`/livingPlaces/${_id}/edit`);
+    return this.api.put(`/living-places/${_id}`);
   };
 
   deleteLivingPlace = (_id) => {
-    return this.api.delete(`/livingPlaces/${_id}/delete`);
+    return this.api.delete(`/living-places/${_id}`);
   };
 }
 

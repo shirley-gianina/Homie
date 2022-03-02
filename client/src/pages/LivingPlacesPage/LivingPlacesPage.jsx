@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+import { useSearchParams } from "react-router-dom";
 
 function LivingPlacesPage() {
-  return (
-    <div>LivingPlacesPage</div>
-  )
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = Object.fromEntries([...searchParams]);
+
+  return <div>LivingPlacesPage {query.city}</div>;
 }
 
-export default LivingPlacesPage
+export default LivingPlacesPage;

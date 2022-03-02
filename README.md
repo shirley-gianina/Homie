@@ -14,7 +14,7 @@ This project’s aim is to provide a searcher of homes for rent all over the wor
 | GET      |  Public            | ‘/living-places?city=Madrid’      |  Obtener listado de viviendas|
 | POST     |  Is authenticated  | ‘/living-places/create’           |  Mandar datos para crear vivienda|
 | GET      |  Public            | ‘/living-places/:id’              |  Obtener datos de detalle vivienda|
-| PATCH    |  Is Owner          | ‘/living-places/:id/edit’         |  Mandar datos para editar vivienda|
+| PATCH    |  Is Owner          | ‘/living-places/:id’         |  Mandar datos para editar vivienda|
 | DELETE   |  Is Owner          | ‘/living-places/:id’              |  Borrar de la base de datos una vivienda|
 |POST      |  Public            | ‘/living-places/:id/message’      |  Formulario de contacto|
 

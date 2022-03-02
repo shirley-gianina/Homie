@@ -1,31 +1,17 @@
 import "./CityCard.css";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const CityCard = () => {
+const CityCard = ({ imageUrl, city }) => {
   return (
-    <div className="container">
-    <h3>Explore destinations</h3>
-      <Card className="cityCard">
-        <Card.Body>
-          <Card.Img className="img" src="./../../images/newyork.jpeg" />
-          <Card.Title className="cardTitle">New York</Card.Title>
-        </Card.Body>
-
-        <Card.Body>
-          <Card.Img className="img" src="./../../images/berlin.jpeg" />
-          <Card.Title className="cardTitle">Berlin</Card.Title>
-        </Card.Body>
-        <Card.Body>
-          <Card.Img className="img" src="./../../images/sydney.jpeg" />
-          <Card.Title className="cardTitle">Sydney</Card.Title>
-        </Card.Body>
-        <Card.Body>
-          <Card.Img className="img" src="./../../images/barcelona.jpeg" />
-          <Card.Title className="cardTitle">Barcelona</Card.Title>
+    <Link to={`/living-places/?city=${city}`}>
+      <Card className="cityCard mx-auto rounded " style={{ width: "18rem" }}>
+        <Card.Body className="p-0">
+          <Card.Img className="img" src={imageUrl} />
+          <Card.Title className="cardTitle">{city}</Card.Title>
         </Card.Body>
       </Card>
-    </div>
+    </Link>
   );
 };
 

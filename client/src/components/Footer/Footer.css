@@ -1,32 +1,31 @@
 footer {
-    background-color: #ffffff;
-    color: rgb(119, 119, 119);
-    font-size: .6em;
-    text-align: center;
-    padding: 30px;
-    bottom: 0;
-    width: 100%;
-    margin-top: 10px
+  background-color: #ffffff;
+  color: rgb(119, 119, 119);
+  font-size: 0.6em;
+  text-align: center;
+  padding: 30px;
+  bottom: 0;
+  width: 100%;
+  margin-top: 10px;
 }
 
 footer ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 footer ul li {
-    list-style: none;
+  list-style: none;
 }
 
 footer ul li a {
- padding-left: 50px;
-
+  padding-left: 50px;
 }
 
-img {
-    width: 150px;
-    margin-bottom: 40px;
+footer img {
+  width: 150px;
+  margin-bottom: 40px;
 }
 
 .footer-shadow {

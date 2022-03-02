@@ -4,7 +4,7 @@ import image2 from "../../images/carousel2.png";
 import image3 from "../../images/carousel3.png";
 import { Carousel } from "react-bootstrap";
 
-function CarouselComponent() {
+function HeaderComponent() {
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
@@ -42,4 +42,4 @@ function CarouselComponent() {
   );
 }
 
-export default CarouselComponent;
+export default HeaderComponent;
