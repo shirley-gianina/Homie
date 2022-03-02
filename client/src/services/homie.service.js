@@ -37,6 +37,6 @@ class HomieService {
   };
 }
 
-const homieService = new HomieService()
+const homieService = new HomieService();
 
 export default homieService;
