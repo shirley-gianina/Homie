@@ -34,7 +34,6 @@ const ProfilePage = ({ username, firstName, lastName, phone, email }) => {
     authService
       .updateUserProfile(updateForm)
       .then(({ data }) => {
-        console.log(data);
         navigate("/profile");
       })
       .catch((err) =>

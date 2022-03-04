@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import { MessageContext } from "../../context/userMessage.context";
 import homieService from "../../services/homie.service";
 
-const NewCoasterForm = ({ closeModal, refreshCoasters }) => {
+const NewCoasterForm = ({  closeModal, refreshCoasters }) => {
   const [coasterData, setCoasterData] = useState({
     title: "",
     description: "",

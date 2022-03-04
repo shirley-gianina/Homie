@@ -1,0 +1,5 @@
+.carousel-detail img {
+  object-fit: cover;
+  height: 100%;
+  /* max-height: 636px; */
+}

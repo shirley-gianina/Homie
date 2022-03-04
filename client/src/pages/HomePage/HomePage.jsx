@@ -17,7 +17,7 @@ function HomePage() {
               <Col md={3}>
                 <CityCard
                   imageUrl="./../../images/newyork.jpeg"
-                  city="New York"
+                  city="Madrid"
                 />
               </Col>
               <Col md={3}>
@@ -76,7 +76,7 @@ function HomePage() {
               id="1"
               title="test1"
               price={2}
-              address={{
+              location={{
                 province: "Madrid",
                 city: "Madrid",
               }}
@@ -92,7 +92,7 @@ function HomePage() {
               id="2"
               title="test2"
               price={2}
-              address={{
+              location={{
                 province: "Madrid",
                 city: "Madrid",
               }}
@@ -108,7 +108,7 @@ function HomePage() {
               id="3"
               title="test3"
               price={2}
-              address={{
+              location={{
                 province: "Almeria",
                 city: "Roquetas de mar",
               }}
@@ -124,7 +124,7 @@ function HomePage() {
               id="4"
               title="test4"
               price={7}
-              address={{
+              location={{
                 province: "Valencia",
                 city: "Valencia",
               }}

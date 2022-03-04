@@ -3,7 +3,7 @@ import axios from "axios";
 class HomieService {
   constructor() {
     this.api = axios.create({
-      baseURL: `${process.env.REACT_APP_API_URL}/homie`,
+      baseURL: `${process.env.REACT_APP_API_URL}`,
     });
 
     this.api.interceptors.request.use((config) => {
@@ -16,8 +16,9 @@ class HomieService {
     });
   }
 
-  getAllLivingPlaces = () => {
-    return this.api.get("/living-places");
+  getAllLivingPlaces = (query) => {
+    const queryString = new URLSearchParams(query).toString();
+    return this.api.get(`/living-places/?${queryString}`);
   };
 
   getOneLivingPlace = (id) => {
@@ -35,8 +36,12 @@ class HomieService {
   deleteLivingPlace = (id) => {
     return this.api.delete(`/livingPlaces/${id}`);
   };
-}
 
-const homieService = new HomieService()
+  saveMessageLivingPlace = (id) => {
+    return this.api.create(`/livingPlaces/${id}`);
+  };
+}
+ 
+const homieService = new HomieService();
 
 export default homieService;

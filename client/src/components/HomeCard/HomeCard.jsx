@@ -3,7 +3,7 @@ import { React, useState } from "react";
 import "./HomeCard.css";
 import { Link } from "react-router-dom";
 
-function HomeCard({ id, price, address, title, images }) {
+function HomeCard({ id, price, location, title, images }) {
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
@@ -12,7 +12,7 @@ function HomeCard({ id, price, address, title, images }) {
 
   return (
     <Link to={`/living-places/${id}`}>
-      <Card className="rounded mx-auto" style={{ width: "18rem" }}>
+      <Card className="rounded mx-auto home-card" style={{ width: "18rem" }}>
         <Card.Header className="p-0">
           <Carousel
             interval={null}
@@ -33,7 +33,7 @@ function HomeCard({ id, price, address, title, images }) {
         </Card.Header>
         <Card.Body>
           <Card.Text className="text-muted mb-1">
-            {address.city}, {address.province}
+            {location.city}, {location.province}
           </Card.Text>
           <Card.Title className="text-dark">{title}</Card.Title>
           <Card.Text className="text-dark">€{price} / Mes</Card.Text>

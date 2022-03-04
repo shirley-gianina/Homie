@@ -29,7 +29,6 @@ function SignupForm() {
     authService
       .signup(signupForm)
       .then(({ data }) => {
-        console.log(data);
         navigate("/profile");
       })
       .catch((err) =>
