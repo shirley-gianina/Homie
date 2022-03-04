@@ -3,7 +3,7 @@ import axios from "axios";
 class HomieService {
   constructor() {
     this.api = axios.create({
-      baseURL: `${process.env.REACT_APP_API_URL}/homie`,
+      baseURL: `${process.env.REACT_APP_API_URL}`,
     });
 
     this.api.interceptors.request.use((config) => {

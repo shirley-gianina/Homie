@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "cloudinary": "^1.28.1",
+    "multer": "^1.4.4",
+    "multer-storage-cloudinary": "^4.0.0",
     "react-grid-carousel": "^1.0.1",
     "react-icons": "^4.3.1"
   }

@@ -54,10 +54,7 @@ const ProfilePage = () => {
                 </div>
                 <div className="col-7 pt-2">
                   {user && (
-                    <p className="text-dark fw-normal">
-                      {" "}
-                      hola {user.firstName}
-                    </p>
+                    <p className="text-dark fw-normal"> {user.username}</p>
                   )}
                   <p className="text-muted"></p>
                 </div>
@@ -84,13 +81,14 @@ const ProfilePage = () => {
               {/* TODO add spiner when user info hasnt arrived yet */}
               {user ? (
                 <>
-                  <Card.Title> vvvvv{user.username} </Card.Title>
+                  <Card.Title> {user.username} </Card.Title>
                   <Card.Text>{user.firstName}</Card.Text>
                   <Card.Text>{user.lastName}</Card.Text>
                   <Card.Text>{user.username}</Card.Text>
                   <Card.Text>{user.phone}</Card.Text>
-                  <Button variant="primary">Create new living place
-                  </Button>
+                  <Card.Text>
+                    <a href="/living-places/create">Create new living place</a>
+                  </Card.Text>
                 </>
               ) : (
                 <Card.Title> CARGANDO INFO ... </Card.Title>
