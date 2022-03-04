@@ -8,11 +8,13 @@ router.get("/profile/:id", (req, res) => {
   User.find(id)
     .then((response) => res.json(response))
     .catch((err) => res.status(500).json(err));
+    console.log(id)
 });
 
 
 router.post("/profile", (req, res) => {
   const {
+    username,
     firstName,
     lastName,
     email,
@@ -21,6 +23,7 @@ router.post("/profile", (req, res) => {
 } = req.body;
 
   User.create({
+    username,
     firstName,
     lastName,
     email,
@@ -33,9 +36,10 @@ router.post("/profile", (req, res) => {
 
 router.put("/profile/:id", isAuthenticated, (req, res) => {
   const { id } = req.params;
-  const { firstName, lastName, email, password, phone } = req.body;
+  const { username, firstName, lastName, email, password, phone } = req.body;
 
   User.findOneAndUpdate({
+    username,
     firstName,
     lastName,
     email,

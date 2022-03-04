@@ -16,7 +16,7 @@ class UserService {
     });
   }
 
-  goToUserProfile = (id) => {
+  goToUserProfile = () => {
     return this.api.get(`/profile`);
   };
   getUserProfile = (id) => {

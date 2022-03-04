@@ -3,23 +3,32 @@ import { Form, Button } from "react-bootstrap";
 import { MessageContext } from "../../context/userMessage.context";
 import homieService from "../../services/homie.service";
 
-const NewCoasterForm = ({ closeModal, refreshCoasters }) => {
-  const [coasterData, setCoasterData] = useState({
+const NewLivingPlaceForm = () => {
+  const [livingPlaceData, setlivingPlaceData] = useState({
     title: "",
-    description: "",
-    length: 0,
-    inversions: 0,
+    category: "",
+    price: "",
     imageUrl: "",
-  });
+    [location.address]:"",
+    [location.city]:"",
+    [location.province]:"",
+    [location.zipcode]:"",
+    [location.country]:"",
+    description:"",
+    condition:"",
+    [features.m2]:"",
+    [features.bedrooms]:"",
+    [features.bathrooms]:"",
+    [features.amenities]:[""],
+    });
 
-  const { title, description, length, inversions, imageUrl } = coasterData;
-  const { setShowMessage, setMessageInfo } = useContext(MessageContext);
+  const { title, category, price, imageUrl, location, description, condition, features } = livingPlaceData;
 
   const handleInputChange = (e) => {
     const { value, name } = e.target;
 
-    setCoasterData({
-      ...coasterData,
+    setlivingPlaceData({
+      ...livingPlaceData,
       [name]: value, // computed propery names
     });
   };
@@ -27,16 +36,10 @@ const NewCoasterForm = ({ closeModal, refreshCoasters }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    coastersService
-      .saveCoaster(coasterData)
+    homieService
+      .createLivingPlace(livingPlaceData)
       .then(({ data }) => {
-        setShowMessage(true);
-        setMessageInfo({
-          title: "Completado",
-          desc: "Nueva montaña rusa creada",
-        });
-        refreshCoasters();
-        closeModal();
+       console.log(data)
       })
       .catch((err) => console.log(err));
   };
@@ -44,7 +47,7 @@ const NewCoasterForm = ({ closeModal, refreshCoasters }) => {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="title">
-        <Form.Label>Nombre</Form.Label>
+        <Form.Label>Title</Form.Label>
         <Form.Control
           type="text"
           value={title}
@@ -54,30 +57,30 @@ const NewCoasterForm = ({ closeModal, refreshCoasters }) => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="description">
-        <Form.Label>Descripción</Form.Label>
+        <Form.Label>Category</Form.Label>
         <Form.Control
           type="text"
-          value={description}
+          value={category}
           onChange={handleInputChange}
           name="description"
         />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="length">
-        <Form.Label>Longitud (m)</Form.Label>
+        <Form.Label>Price</Form.Label>
         <Form.Control
           type="number"
-          value={length}
+          value={price}
           onChange={handleInputChange}
           name="length"
         />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="inversions">
-        <Form.Label>Inversiones</Form.Label>
+        <Form.Label>Location</Form.Label>
         <Form.Control
           type="number"
-          value={inversions}
+          value={location.address}
           onChange={handleInputChange}
           name="inversions"
         />
@@ -102,4 +105,4 @@ const NewCoasterForm = ({ closeModal, refreshCoasters }) => {
   );
 };
 
-export default NewCoasterForm;
+export default NewLivingPlaceForm;

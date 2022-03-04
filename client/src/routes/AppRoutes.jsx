@@ -23,6 +23,10 @@ const AppRoutes = () => {
         <Route path="" element={<ProfilePage />} />
       </Route>
 
+      <Route path="/profile/living-places" element={<PrivateRoute />}>
+        <Route path="" element={<ProfilePage />} />
+      </Route>
+
       <Route path="/profile/living-places" element={<ProfileLivingPlaces />} />
       <Route path="/profile/messages" element={<ProfileMessages />} />
       <Route path="*" element={<h1>404</h1>} />

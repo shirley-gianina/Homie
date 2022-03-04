@@ -48,7 +48,6 @@ function SignupForm() {
           onChange={handleInputChange}
         />
       </Form.Group>
-
       <Form.Group className="mb-3 w-100">
         <Form.Label>Lastname</Form.Label>
         <Form.Control
@@ -58,17 +57,16 @@ function SignupForm() {
           onChange={handleInputChange}
         />
       </Form.Group>
-
       <Form.Group className="mb-3 w-100">
         <Form.Label>username</Form.Label>
         <Form.Control
           type="text"
           name="username"
-          value={signupForm.username}
+          value={signupForm.username }
           onChange={handleInputChange}
         />
       </Form.Group>
-
+     
       <Form.Group className="mb-3 w-100">
         <Form.Label>Phone</Form.Label>
         <Form.Control
@@ -78,17 +76,15 @@ function SignupForm() {
           onChange={handleInputChange}
         />
       </Form.Group>
-
       <Form.Group className="mb-3 w-100">
         <Form.Label>Email</Form.Label>
         <Form.Control
           type="email"
           name="email"
           value={signupForm.email}
-          onChange={handleInputChange}
+          onChange={handleInputChange} 
         />
       </Form.Group>
-
       <Form.Group className="mb-3 w-100">
         <Form.Label>Password</Form.Label>
         <Form.Control
@@ -98,7 +94,6 @@ function SignupForm() {
           onChange={handleInputChange}
         />
       </Form.Group>
-
       <Button variant="primary" type="submit" style={{ width: "100%" }}>
         Signup
       </Button>

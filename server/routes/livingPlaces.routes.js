@@ -21,23 +21,25 @@ router.post("/living-places", isAuthenticated, (req, res) => {
   const {
     title,
     owner,
-    address,
-    price,
     category,
-    condition,
+    images,
+    price,
+    location,
     description,
+    condition,
     features,
   } = req.body;
 
   LivingPlace.create({
     title,
     owner,
-    address,
-    price,
     category,
-    condition,
+    images,
+    price,
+    location,
     description,
-    features
+    condition,
+    features,
   })
     .then((response) => res.json(response))
     .catch((err) => res.status(500).json(err));
@@ -48,22 +50,24 @@ router.put("/living-places/:id", isAuthenticated, (req, res) => {
   const {
     title,
     owner,
-    address,
-    price,
     category,
-    condition,
+    images,
+    price,
+    location,
     description,
+    condition,
     features,
   } = req.body;
 
   LivingPlace.findOneAndUpdate({
     title,
     owner,
-    address,
-    price,
     category,
-    condition,
+    images,
+    price,
+    location,
     description,
+    condition,
     features,
   })
     .then((response) => res.json(response))
