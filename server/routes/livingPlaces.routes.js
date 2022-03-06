@@ -1,12 +1,38 @@
 const router = require("express").Router();
 const LivingPlace = require("./../models/LivingPlace.model");
 const Message = require("./../models/Message.model");
-const User = require("./../models/User.model");
 const { isAuthenticated } = require("../middlewares/jwt.middleware");
-const fileUploader = require("../config/cloudinary.config");
 
 router.get("/living-places", (req, res) => {
-  LivingPlace.find()
+  const { query } = req;
+  const filter = {};
+  let limit = 100;
+
+  if (query.city) {
+    filter["location.city"] = query.city;
+  }
+
+  if (query.country) {
+    filter["location.country"] = query.country;
+  }
+
+  if (query.category) {
+    filter["category"] = query.category;
+  }
+
+  if (query.condition) {
+    filter["condition"] = query.condition;
+  }
+
+  if (query.limit) {
+    limit = query.limit;
+  }
+
+  console.log(filter);
+
+  LivingPlace.find(filter)
+    .populate("owner")
+    .limit(limit)
     .then((response) => res.json(response))
     .catch((err) => res.status(500).json(err));
 });
@@ -15,6 +41,7 @@ router.get("/living-places/:id", (req, res) => {
   const { id } = req.params;
 
   LivingPlace.findById(id)
+    .populate("owner")
     .then((response) => res.json(response))
     .catch((err) => res.status(500).json(err));
 });
@@ -26,37 +53,14 @@ router.post("/living-places", isAuthenticated, (req, res) => {
     category,
     images,
     price,
-    m2,
-    bedrooms,
-    bathrooms,
+    features,
     amenities,
-    address,
-    city,
-    province,
-    zipcode,
-    country,
+    location,
     description,
     condition,
   } = req.body;
 
   console.log(req.body, req.payload, "a ver que sale de esto");
-
-  const features = {
-    m2,
-    bedrooms,
-    bathrooms,
-    amenities: [amenities],
-  };
-
-  const location = {
-    address,
-    city,
-    province,
-    zipcode,
-    country,
-  };
-
-  const owner = payload._id;
 
   LivingPlace.create({
     title,
@@ -65,6 +69,7 @@ router.post("/living-places", isAuthenticated, (req, res) => {
     images,
     price,
     location,
+    amenities,
     description,
     condition,
     features,
@@ -78,45 +83,54 @@ router.post("/living-places", isAuthenticated, (req, res) => {
 
 router.put("/living-places/:id", isAuthenticated, (req, res) => {
   const { id } = req.params;
+  const userId = req.payload._id;
+
   const {
     title,
-    owner,
+    description,
     category,
     images,
     price,
     location,
-    description,
     condition,
     features,
+    amenities,
   } = req.body;
 
-  LivingPlace.findOneAndUpdate({
-    title,
-    owner,
-    category,
-    images,
-    price,
-    location,
-    description,
-    condition,
-    features,
-  })
+  console.log(req.body);
+
+  LivingPlace.findOneAndUpdate(
+    { _id: id, owner: userId },
+    {
+      title,
+      category,
+      images,
+      price,
+      location,
+      description,
+      condition,
+      features,
+      amenities,
+    }
+  )
     .then((response) => res.json(response))
     .catch((err) => res.status(500).json(err));
 });
 
-router.post("/livingPlaces/:id/message", isAuthenticated, (req, res) => {
+router.post("/living-places/:id/message", (req, res) => {
   const { id } = req.params;
-  const { message, owner } = req.body;
+  const { message, name, phone, email } = req.body;
 
-  LivingPlace.findById(id).then((livingPlace) => {
-    return Message.create({ owner, livingPlace, message })
-      .then((response) => res.json(response))
-      .catch((err) => res.status(500).json(err));
-  });
+  LivingPlace.findById(id)
+    .then(() => {
+      return Message.create({ livingPlace: id, message, name, phone, email })
+        .then((response) => res.json(response))
+        .catch((err) => res.status(500).json(err));
+    })
+    .catch((err) => res.status(500).json(err));
 });
 
-router.delete("/livingPlaces/:id", isAuthenticated, (req, res) => {
+router.delete("/living-places/:id", isAuthenticated, (req, res) => {
   const { id } = req.params;
   LivingPlace.findByIdAndDelete(id)
     .then((response) => res.json(response))

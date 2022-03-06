@@ -13,6 +13,8 @@ import AboutUsPage from "../pages/AboutUsPage/AboutUsPage";
 import ContactPage from "../pages/ContactPage/ContactPage";
 
 import { Routes, Route } from "react-router-dom";
+import EditLivingPlacesForm from "../components/EditLivingPlaceForm/EditLivingPlaceForm";
+import EditLivingPlaceFormPage from "../pages/EditLivingPlaceFormPage/EditLivingPlaceFormPage";
 
 const AppRoutes = () => {
   return (
@@ -30,17 +32,14 @@ const AppRoutes = () => {
       </Route>
       <Route path="/profile/living-places" element={<PrivateRoute />}>
         <Route path="" element={<ProfileLivingPlaces />} />
-      </Route>
-      <Route path="/living-places/create" element={<PrivateRoute />}>
-        <Route path="" element={<NewLivingPlaceFormPage />} />
+        <Route path="create" element={<NewLivingPlaceFormPage />} />
+        <Route path=":id/edit" element={<EditLivingPlaceFormPage />} />
       </Route>
       <Route path="/profile/messages" element={<PrivateRoute />}>
         <Route path="" element={<ProfileMessages />} />
       </Route>
-      <Route path="/profile/living-places" element={<ProfileLivingPlaces />} />
-      <Route path="/profile/messages" element={<ProfileMessages />} />
       <Route path="*" element={<h1>404</h1>} />
-    </Routes>
+    </Routes> 
   );
 };
 

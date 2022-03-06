@@ -1,53 +1,49 @@
-import {useContext, React } from 'react'
-import { Container, Button, Row, Col, ListGroup, Card } from "react-bootstrap";
-import { CgProfile } from "react-icons/cg";
-import { BiBuildingHouse } from "react-icons/bi";
-import { BiMessageSquareDetail } from "react-icons/bi";
-import { Link, useNavigate } from "react-router-dom";
-import userService from "../../services/user.service";
-import authService from "../../services/auth.service";
-import "./ProfileLivingPlaces.css"
-import { AuthContext } from '../../context/auth.context';
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Button, Col, Container, Nav, Row } from "react-bootstrap";
+import ProfileLivingPlaceCard from "../../components/ProfileLivingPlaceCard/ProfileLivingPlaceCard";
+import ProfileMenu from "../../components/ProfileMenu/ProfileMenu";
+import profileService from "../../services/profile.service";
 
 function ProfileLivingPlaces() {
-  const { user } = useContext(AuthContext);
+  const [places, setPlaces] = useState([]);
+
+  useEffect(() => {
+    profileService.getLivingPlaces().then((response) => {
+      setPlaces(response.data);
+    });
+  }, []);
+
   return (
     <>
-      <Container>
-      <Row>
-        <Col md={3}>
-          <div className="profile-card border">
-            <div className="profile-card-header">
-              <div className="row">
-                <div className="col-5 d-flex justify-content-center">
-                </div>
-                <div className="col-7 pt-2">
-                  {user && (
-                    <p className="text-dark fw-normal username"> {user.username}</p>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-          <ListGroup>
-            <ListGroup.Item>
-              <CgProfile /> <Link to="/profile">Profile</Link>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <BiBuildingHouse />
-              <Link to="/profile/living-places">Living places</Link>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <BiMessageSquareDetail />
-              <Link to="/profile/messages">Messages</Link>
-            </ListGroup.Item>
-          </ListGroup>
-        </Col>
+      <Container className="mt-5">
+        <Nav>
+          <Nav.Item className="ms-auto">
+            <Nav.Link href="/profile/living-places/create">
+              <Button variant="primary">Create new living place</Button>
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+        <Row>
+          <Col md={4}>
+            <ProfileMenu />
+          </Col>
+          <Col md={8}>
+            <Row>
+              {places.map((place) => {
+                return (
+                  <Col md={4} className="mb-3">
+                    <ProfileLivingPlaceCard place={place} />
+                  </Col>
+                );
+              })}
+            </Row>
+          </Col>
         </Row>
       </Container>
-
     </>
   );
 }
 
-export default ProfileLivingPlaces
+export default ProfileLivingPlaces;

@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomeCard from "../../components/HomeCard/HomeCard";
 
 import CityCard from "../../components/CityCard/CityCard";
 import Header from "../../components/Header/Header";
 import { Carousel, Col, Container, Row } from "react-bootstrap";
+import { useState } from "react";
+import homieService from "../../services/homie.service";
 
 function HomePage() {
+
+const [places, setPlaces] = useState([])
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams({ limit: 4})
+    homieService.getAllLivingPlaces(searchParams)
+    .then((response) => {
+      setPlaces(response.data)
+    })
+  }, [])
+
+
   return (
     <>
       <Header />
@@ -17,7 +31,7 @@ function HomePage() {
               <Col md={3}>
                 <CityCard
                   imageUrl="./../../images/newyork.jpeg"
-                  city="New York"
+                  city="Madrid"
                 />
               </Col>
               <Col md={3}>
@@ -70,13 +84,31 @@ function HomePage() {
           </Carousel.Item>
         </Carousel>
         <h2 className="mt-5 mb-3">Travelers’ Choice</h2>
-        <Row className="mb-5">
+        <Row>
+         { places.map((place) => {
+           return(
+              <Col md={3}>
+              <HomeCard 
+              id={place._id}
+              price={place.price}
+              location={place.location}
+              title={place.title}
+              images={place.images}
+              >
+              </HomeCard>
+              </Col>
+           )
+          })}
+
+
+        </Row>
+        {/* <Row className="mb-5">
           <Col md={3}>
             <HomeCard
               id="1"
               title="test1"
               price={2}
-              address={{
+              location={{
                 province: "Madrid",
                 city: "Madrid",
               }}
@@ -92,7 +124,7 @@ function HomePage() {
               id="2"
               title="test2"
               price={2}
-              address={{
+              location={{
                 province: "Madrid",
                 city: "Madrid",
               }}
@@ -108,7 +140,7 @@ function HomePage() {
               id="3"
               title="test3"
               price={2}
-              address={{
+              location={{
                 province: "Almeria",
                 city: "Roquetas de mar",
               }}
@@ -124,7 +156,7 @@ function HomePage() {
               id="4"
               title="test4"
               price={7}
-              address={{
+              location={{
                 province: "Valencia",
                 city: "Valencia",
               }}
@@ -135,7 +167,7 @@ function HomePage() {
               ]}
             />
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </>
   );

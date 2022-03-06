@@ -3,13 +3,19 @@
 }
 
 .navbar {
-  height: 100px;
+  height: 60px;
 }
 
-.navbar img {
+.navbar .logo {
   width: 150px;
 }
 
 .building {
   width: 10px;
+}
+
+.navbar .img-profile {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--bs-dark);
 }

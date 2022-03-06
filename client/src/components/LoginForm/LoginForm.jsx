@@ -57,6 +57,9 @@ function LoginForm() {
           onChange={handleInputChange}
         />
       </Form.Group>
+      <Button variant="primary" type="submit" style={{ width: "100%" }}>
+        Login
+      </Button>
       <div className="w-100 separator d-flex align-items-center justify-content-center text-center mt-5">
         <hr className="w-100" />
         <p className="w-100 pt-2 text-muted px-2">Or login with</p>
@@ -73,14 +76,10 @@ function LoginForm() {
       </div>
       <p className="text-center mt-3 fs-5">
         Don't have an account?
-        <a className="text-decoration-none fw-bold" href="/">
+        <a className="text-decoration-none fw-bold ms-1" href="/signup">
           Signup
         </a>
       </p>
-
-      <Button variant="primary" type="submit" style={{ width: "100%" }}>
-        Login
-      </Button>
     </Form>
   );
 }

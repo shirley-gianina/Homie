@@ -1,0 +1,355 @@
+[
+    {
+        "owner": "621d46764a01bd9ed6ebf04c",
+		"title": "Handmade Wooden Mouse",
+		"description": "Libero omnis aut odio quia est. Reprehenderit sed quam ut est eum ullam facere et. Dolorem et voluptatem molestiae vero et. Minus vero sed et quia. Doloribus quisquam cum corporis molestiae.",
+		"price": 223.00,
+		"category": "house",
+		"condition": "New",
+        "features": {
+            "m2": 100,
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "amenities": [
+                "elevator",
+                "heating",
+                "reduced mobility",
+                "parking",
+                "terrace",
+                "garden",
+                "swimming pool",
+                "air conditioning",
+                "pets allowed"
+            ]
+        },
+		"location": {
+			"address": "52623 Donnie Roads",
+			"zipcode": "68225-1064",
+			"city": "Madrid",
+			"province": "Madrid",
+			"country": "Spain"
+		},
+		"images": [
+			"http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-2.jpg",
+			"http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-3.jpg",
+			"http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-4.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-5.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-6.jpg"
+		]
+	},
+	{
+        "owner": "621d46764a01bd9ed6ebf04c","agentId": 22344,
+		"title": "Awesome Cotton Table",
+		"description": "Sint aliquam voluptates nam. Exercitationem at ipsam. Ducimus natus ipsa nulla dolores aliquid. Occaecati minus dolores suscipit iste voluptatibus numquam qui tempore.",
+		"price": 768.00,
+		"category": "apartment",
+		"condition": "New",
+		 "features": {
+            "m2": 100,
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "amenities": [
+                "elevator",
+                "heating",
+                "reduced mobility",
+                "parking",
+                "terrace",
+                "garden",
+                "swimming pool",
+                "air conditioning",
+                "pets allowed"
+            ]
+        },
+		"images": [
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-7.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-8.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-9.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-10.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-11.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-12.jpg"
+        ],
+		"location": {
+			"address": "52623 Donnie Roads",
+			"zipcode": "68225-1064",
+			"city": "Madrid",
+			"province": "Madrid",
+			"country": "Spain"
+		}
+	},
+	{
+        "owner": "621d46764a01bd9ed6ebf04c",
+		"title": "Incredible Granite Chicken",
+		"description": "Totam voluptatum iusto autem est sapiente eius. Autem qui incidunt beatae harum iusto dolorem numquam voluptates qui. Repellendus aut deserunt ipsum ad excepturi velit tempore ut reiciendis. Ducimus officia animi voluptatem sequi. Ut enim sequi delectus adipisci nemo praesentium illo. Rerum ut ab eum.",
+		"price": 191.00,
+		"category": "house",
+		"condition": "Second hand",
+		"features": {
+            "m2": 100,
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "amenities": [
+                "elevator",
+                "heating",
+                "reduced mobility",
+                "parking",
+                "terrace",
+                "garden",
+                "swimming pool",
+                "air conditioning",
+                "pets allowed"
+            ]
+        },
+		"images": [
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-13.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-14.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-15.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-16.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-17.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-18.jpg"
+        ],
+        "location": {
+			"address": "52623 Donnie Roads",
+			"zipcode": "68225-1064",
+			"city": "Madrid",
+			"province": "Madrid",
+			"country": "Spain"
+		}
+	},
+	{
+        "owner": "621d46764a01bd9ed6ebf04c",
+		"title": "Unbranded Frozen Gloves",
+		"description": "Voluptates commodi nihil voluptatem ea. Id aut ea aliquam perspiciatis quo voluptatum sapiente quas. Esse nobis dolores.",
+		"price": 662.00,
+		"category": "apartment",
+		"condition": "New",
+        "features": {
+            "m2": 100,
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "amenities": [
+                "elevator",
+                "heating",
+                "reduced mobility",
+                "parking",
+                "terrace",
+                "garden",
+                "swimming pool",
+                "air conditioning",
+                "pets allowed"
+            ]
+        },
+		"images": [
+			"http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-19.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-20.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-1.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-2.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-3.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-4.jpg"
+
+        ],
+
+		"location": {
+			"address": "52623 Donnie Roads",
+			"zipcode": "68225-1064",
+			"city": "Madrid",
+			"province": "Madrid",
+			"country": "Spain"
+		}
+	},
+	{
+        "owner": "621d46764a01bd9ed6ebf04c",
+		"title": "Rustic Cotton Chicken",
+		"description": "Quam cum nihil a quod nam assumenda repellat qui. Suscipit iste facilis aut dolore voluptatum iure. Neque eius numquam rerum occaecati. Totam ratione animi voluptas ex. Laborum modi eius neque inventore rerum.",
+		"price": 888.00,
+		"category": "flat",
+		"condition": "New",
+		        "features": {
+            "m2": 100,
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "amenities": [
+                "elevator",
+                "heating",
+                "reduced mobility",
+                "parking",
+                "terrace",
+                "garden",
+                "swimming pool",
+                "air conditioning",
+                "pets allowed"
+            ]
+        },
+		"images": [
+
+			"http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-5.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-6.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-7.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-8.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-9.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-10.jpg"
+        ],
+        "location": {
+            "address": "52623 Donnie Roads",
+            "zipcode": "68225-1064",
+            "city": "Madrid",
+            "province": "Madrid",
+            "country": "Spain"
+		}
+	},
+	{
+        "owner": "621d46764a01bd9ed6ebf04c",
+		"title": "Small Metal Ball",
+		"description": "Dolores tempora distinctio. Excepturi reprehenderit blanditiis quibusdam reprehenderit non quo atque sunt. Sint sed sit ut et doloremque amet reprehenderit.",
+		"price": 316.00,
+		"category": "duplex",
+		"condition": "Second hand",
+		        "features": {
+            "m2": 100,
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "amenities": [
+                "elevator",
+                "heating",
+                "reduced mobility",
+                "parking",
+                "terrace",
+                "garden",
+                "swimming pool",
+                "air conditioning",
+                "pets allowed"
+            ]
+        },
+		"images": [
+			"http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-11.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-12.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-13.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-14.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-15.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-16.jpg"
+
+        ],
+        "location": {
+			"address": "52623 Donnie Roads",
+			"zipcode": "68225-1064",
+			"city": "Madrid",
+			"province": "Madrid",
+			"country": "Spain"
+		}
+	},
+	{
+        "owner": "621d46764a01bd9ed6ebf04c",
+		"title": "Small Soft Ball",
+		"description": "Id ea quasi magnam aspernatur omnis. Inventore possimus aut autem iure ut eum. Quia fuga hic similique voluptas officiis esse. Veritatis voluptatibus qui ut. Voluptatem enim sit assumenda rerum. Ad ut enim necessitatibus totam quia cumque asperiores laborum.",
+		"price": 245.00,
+		"category": "penthouse",
+		"condition": "Second hand",
+		        "features": {
+            "m2": 100,
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "amenities": [
+                "elevator",
+                "heating",
+                "reduced mobility",
+                "parking",
+                "terrace",
+                "garden",
+                "swimming pool",
+                "air conditioning",
+                "pets allowed"
+            ]
+        },
+		"images": [
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-17.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-18.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-19.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-20.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-1.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-2.jpg"
+        ],
+		"location": {
+			"address": "52623 Donnie Roads",
+			"zipcode": "68225-1064",
+			"city": "Madrid",
+			"province": "Madrid",
+			"country": "Spain"
+		}
+    },
+	{
+        "owner": "621d46764a01bd9ed6ebf04c",
+		"title": "Incredible Wooden Ball",
+		"description": "Labore voluptatem laborum quod est. Nihil voluptates et praesentium quis. Culpa est ut voluptatem molestiae sint non veritatis suscipit ab. Quia accusamus laudantium aut eaque minus architecto voluptatem vero maxime. Libero minima aperiam provident rerum autem voluptatem veniam est quos.",
+		"price": 662.00,
+		"category": "house",
+		"condition": "Second hand",
+	        "features": {
+            "m2": 100,
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "amenities": [
+                "elevator",
+                "heating",
+                "reduced mobility",
+                "parking",
+                "terrace",
+                "garden",
+                "swimming pool",
+                "air conditioning",
+                "pets allowed"
+            ]
+        },
+		"images": [
+			"http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-3.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-4.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-5.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-6.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-7.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-8.jpg"
+        ],
+		"location": {
+			"address": "52623 Donnie Roads",
+			"zipcode": "68225-1064",
+			"city": "Madrid",
+			"province": "Madrid",
+			"country": "Spain"
+		}
+	},
+	{
+        "owner": "621d46764a01bd9ed6ebf04c",
+		"title": "Handcrafted Wooden Towels",
+		"description": "Natus provident voluptatum quibusdam minima non officiis beatae. Nobis est architecto sequi laboriosam id maiores harum et. Quo dolores consequuntur nostrum ullam sapiente asperiores itaque dolores. Et nobis voluptatem dolores corrupti accusantium. Magni voluptas quis inventore.",
+		"price": 170.00,
+		"category": "house",
+		"condition": "Second hand",
+	        "features": {
+            "m2": 100,
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "amenities": [
+                "elevator",
+                "heating",
+                "reduced mobility",
+                "parking",
+                "terrace",
+                "garden",
+                "swimming pool",
+                "air conditioning",
+                "pets allowed"
+            ]
+        },
+		"images": [
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-9.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-10.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-11.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-12.jpg",
+            "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-13.jpg"
+        ],
+        "location": {
+			"address": "52623 Donnie Roads",
+			"zipcode": "68225-1064",
+			"city": "Madrid",
+			"province": "Madrid",
+			"country": "Spain"
+		}
+	}
+]

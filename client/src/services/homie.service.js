@@ -16,8 +16,9 @@ class HomieService {
     });
   }
 
-  getAllLivingPlaces = () => {
-    return this.api.get("/living-places");
+  getAllLivingPlaces = (searchParams) => {
+    const queryString = searchParams.toString();
+    return this.api.get(`/living-places/?${queryString}`);
   };
 
   getOneLivingPlace = (id) => {
@@ -28,12 +29,16 @@ class HomieService {
     return this.api.post(`/living-places`, homie);
   };
 
-  editLivingPlace = (id) => {
-    return this.api.put(`/living-places/${id}`);
+  editLivingPlace = (id, data) => {
+    return this.api.put(`/living-places/${id}`, data);
   };
 
   deleteLivingPlace = (id) => {
-    return this.api.delete(`/livingPlaces/${id}`);
+    return this.api.delete(`/living-places/${id}`);
+  };
+
+  saveMessageLivingPlace = (id, message) => {
+    return this.api.post(`/living-places/${id}/message`, message);
   };
 }
 

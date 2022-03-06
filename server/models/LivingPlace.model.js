@@ -69,19 +69,43 @@ const LivingPlaceSchema = new Schema(
         type: Number,
         // required: true,
       },
-      amenities: {
-        type: [String],
-        enum: [
-          "elevator",
-          "heating",
-          "reduced mobility",
-          "parking",
-          "terrace",
-          "garden",
-          "swimming pool",
-          "air conditioning",
-          "pets allowed",
-        ],
+    },
+    amenities: {
+      elevator: {
+        type: Boolean,
+        default: false,
+      },
+      heating: {
+        type: Boolean,
+        default: false,
+      },
+      "reduced mobility": {
+        type: Boolean,
+        default: false,
+      },
+      parking: {
+        type: Boolean,
+        default: false,
+      },
+      terrace: {
+        type: Boolean,
+        default: false,
+      },
+      garden: {
+        type: Boolean,
+        default: false,
+      },
+      "swimming pool": {
+        type: Boolean,
+        default: false,
+      },
+      "air conditioning": {
+        type: Boolean,
+        default: false,
+      },
+      "pets allowed": {
+        type: Boolean,
+        default: false,
       },
     },
   },

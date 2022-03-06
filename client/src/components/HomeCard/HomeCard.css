@@ -1,0 +1,5 @@
+.home-card img {
+    object-fit: cover;
+    max-height: 170px;
+
+}
