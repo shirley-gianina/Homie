@@ -12,7 +12,7 @@ const Navigation = () => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand as="span">
-            <img className="mb-auto" src="/../images/homie-new.png" />
+            <img className="mb-auto" src="/../images/homie3.png" />
           </Navbar.Brand>
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -31,7 +31,9 @@ const Navigation = () => {
               </>
             ) : (
               <>
-                <Nav.Link as="span">Hi there, {user?.firstName}!</Nav.Link>
+                <NavLink to="/profile">
+                  <Nav.Link as="span">Hi there, {user?.firstName}!</Nav.Link>
+                </NavLink>
                 <Nav.Link as="span" onClick={logOutUser}>
                   Logout
                 </Nav.Link>

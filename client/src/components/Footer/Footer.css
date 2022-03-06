@@ -3,10 +3,11 @@ footer {
   color: rgb(119, 119, 119);
   font-size: 0.6em;
   text-align: center;
-  padding: 30px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   bottom: 0;
   width: 100%;
-  margin-top: 10px;
+  position: fixed;
 }
 
 footer ul {

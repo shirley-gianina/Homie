@@ -70,21 +70,17 @@ const LivingPlaceSchema = new Schema(
         // required: true,
       },
       amenities: {
-        type: [
-          {
-            type: String,
-            enum: [
-              "elevator",
-              "heating",
-              "reduced mobility",
-              "parking",
-              "terrace",
-              "garden",
-              "swimming pool",
-              "air conditioning",
-              "pets allowed",
-            ],
-          },
+        type: [String],
+        enum: [
+          "elevator",
+          "heating",
+          "reduced mobility",
+          "parking",
+          "terrace",
+          "garden",
+          "swimming pool",
+          "air conditioning",
+          "pets allowed",
         ],
       },
     },

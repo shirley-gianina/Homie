@@ -8,8 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 import userService from "../../services/user.service";
 import authService from "../../services/auth.service";
 import "./ProfilePage.css";
-// import user from "./../../../../"
-// import Menu from "./../../components/Menu/Menu"
 
 const ProfilePage = () => {
   const { user } = useContext(AuthContext);
@@ -39,24 +37,16 @@ const ProfilePage = () => {
   return (
     <Container>
       <Row>
-        <Col md={6}>
+        <Col md={3}>
           <div className="profile-card border">
             <div className="profile-card-header">
               <div className="row">
                 <div className="col-5 d-flex justify-content-center">
-                  <img
-                    className="rounded-circle shadow"
-                    src=""
-                    alt=""
-                    width="100px"
-                    height="135px"
-                  />
                 </div>
                 <div className="col-7 pt-2">
                   {user && (
-                    <p className="text-dark fw-normal"> {user.username}</p>
+                    <p className="text-dark fw-normal username"> {user.username}</p>
                   )}
-                  <p className="text-muted"></p>
                 </div>
               </div>
             </div>
@@ -76,7 +66,7 @@ const ProfilePage = () => {
           </ListGroup>
         </Col>
         <Col md={6}>
-          <Card style={{ width: "35rem" }}>
+          <Card style={{ width: "30rem" }}>
             <Card.Body>
               {/* TODO add spiner when user info hasnt arrived yet */}
               {user ? (
@@ -87,7 +77,7 @@ const ProfilePage = () => {
                   <Card.Text>{user.username}</Card.Text>
                   <Card.Text>{user.phone}</Card.Text>
                   <Card.Text>
-                    <a href="/living-places/create">Create new living place</a>
+                    <a href="/living-places/create">+ Create new living place</a>
                   </Card.Text>
                 </>
               ) : (

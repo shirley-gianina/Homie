@@ -7,7 +7,7 @@ import ProfileLivingPlaces from "./../pages/ProfileLivingPlaces/ProfileLivingPla
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import ProfileMessages from "./../pages/ProfileMessages/ProfileMessages";
 import PrivateRoute from "./PrivateRoute";
-import NewLivingPlaceFormPage from "./../pages/NewLivingPlaceFormPage/NewLivingPlaceFormPage"
+import NewLivingPlaceFormPage from "./../pages/NewLivingPlaceFormPage/NewLivingPlaceFormPage";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -23,10 +23,13 @@ const AppRoutes = () => {
         <Route path="" element={<ProfilePage />} />
       </Route>
       <Route path="/profile/living-places" element={<PrivateRoute />}>
-        <Route path="" element={<ProfilePage />} />
+        <Route path="" element={<ProfileLivingPlaces />} />
       </Route>
       <Route path="/living-places/create" element={<PrivateRoute />}>
         <Route path="" element={<NewLivingPlaceFormPage />} />
+      </Route>
+      <Route path="/profile/messages" element={<PrivateRoute />}>
+        <Route path="" element={<ProfileMessages />} />
       </Route>
       <Route path="/profile/living-places" element={<ProfileLivingPlaces />} />
       <Route path="/profile/messages" element={<ProfileMessages />} />

@@ -13,7 +13,6 @@ const NewLivingPlaceForm = () => {
     m2: "",
     bedrooms: "",
     bathrooms: "",
-    amenities: "",
     address: "",
     city: "",
     province: "",
@@ -21,6 +20,15 @@ const NewLivingPlaceForm = () => {
     country: "",
     description: "",
     condition: "",
+    elevator: false,
+    heating: false,
+    "reduced mobility": false,
+    parking: false,
+    terrace: false,
+    garden: false,
+    "swimming pool": false,
+    "air conditioning": false,
+    "pets allowed": false
   });
 
   const [loadingImage, setLoadingImage] = useState(false);
@@ -32,7 +40,6 @@ const NewLivingPlaceForm = () => {
     m2,
     bedrooms,
     bathrooms,
-    amenities,
     address,
     city,
     province,
@@ -53,6 +60,8 @@ const NewLivingPlaceForm = () => {
       [name]: inputValue,
     });
   };
+
+  const [checked, setChecked] = useState(false);
 
   const uploadLivingPlaceImage = (e) => {
     setLoadingImage(true);
@@ -79,7 +88,7 @@ const NewLivingPlaceForm = () => {
       .createLivingPlace(livingPlaceData)
       .then(({ data }) => {
         console.log(data);
-        navigate("/profile");
+        navigate("/profile/living-places");
       })
       .catch((err) => console.log(err));
   };
@@ -119,59 +128,69 @@ const NewLivingPlaceForm = () => {
 
             <Form.Group className="mb-3" controlId="amenities">
               <Form.Label>Amenities</Form.Label>
+
               <Form.Check
                 type="checkbox"
                 label="Elevator"
                 name="elevator"
-                onChange={handleInputChange}
+                onChange={() => setChecked(true)}
+                value={checked}
               />
               <Form.Check
                 type="checkbox"
                 label="Heating"
                 name="heating"
-                onChange={handleInputChange}
+                value={checked}
+                onChange={() => setChecked(true)}
               />
               <Form.Check
                 type="checkbox"
                 label="Reduced mobility"
                 name="reduced mobility"
-                onChange={handleInputChange}
+                value={checked}
+                onChange={() => setChecked(true)}
               />
               <Form.Check
                 type="checkbox"
                 label="Parking"
                 name="parking"
-                onChange={handleInputChange}
+                value={checked}
+                onChange={() => setChecked(true)}
               />
               <Form.Check
                 type="checkbox"
                 label="Terrace"
                 name="terrace"
-                onChange={handleInputChange}
+                value={checked}
+                onChange={() => setChecked(true)}
               />
               <Form.Check
                 type="checkbox"
                 label="Garden"
                 name="garden"
-                onChange={handleInputChange}
+                value={checked}
+                onChange={() => setChecked(true)}
               />
               <Form.Check
                 type="checkbox"
                 label="Swimming pool"
                 name="swimming pool"
-                onChange={handleInputChange}
+                value={checked}
+                onChange={() => setChecked(true)}
               />
               <Form.Check
                 type="checkbox"
                 label="Air conditioning"
                 name="air conditioning"
-                onChange={handleInputChange}
+                value={checked}
+                onChange={() => setChecked(true)}
               />
               <Form.Check
                 type="checkbox"
                 label="Pets allowed"
                 name="pets allowed"
-                onChange={handleInputChange}
+                value={checked}
+                onChange={() => setChecked(true)}
               />
             </Form.Group>
 
