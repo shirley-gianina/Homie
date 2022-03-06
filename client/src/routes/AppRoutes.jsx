@@ -8,6 +8,9 @@ import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import ProfileMessages from "./../pages/ProfileMessages/ProfileMessages";
 import PrivateRoute from "./PrivateRoute";
 import NewLivingPlaceFormPage from "./../pages/NewLivingPlaceFormPage/NewLivingPlaceFormPage";
+import PrivacyPage from "../pages/PrivacyPage/PrivacyPage";
+import AboutUsPage from "../pages/AboutUsPage/AboutUsPage";
+import ContactPage from "../pages/ContactPage/ContactPage";
 
 import { Routes, Route } from "react-router-dom";
 import EditLivingPlacesForm from "../components/EditLivingPlaceForm/EditLivingPlaceForm";
@@ -21,6 +24,9 @@ const AppRoutes = () => {
       <Route path="/living-places/:id" element={<LivingPlaceDetailPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/about-us" element={<AboutUsPage />} />
+      <Route path="/contact" element={<ContactPage />} />
       <Route path="/profile" element={<PrivateRoute />}>
         <Route path="" element={<ProfilePage />} />
       </Route>
