@@ -11,17 +11,17 @@ const Footer = () => (
             </a>
           </li>
           <li>
-            <a className="fs-6" href="/">
+            <a className="fs-6" href="/contact">
               Contact
             </a>
           </li>
           <li>
-            <a className="fs-6" href="/">
+            <a className="fs-6" href="/about-us">
               About us
             </a>
           </li>
           <li>
-            <a className="fs-6" href="/">
+            <a className="fs-6" href="/privacy">
               Privacy
             </a>
           </li>

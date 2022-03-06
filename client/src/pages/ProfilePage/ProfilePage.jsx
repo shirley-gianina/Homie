@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import userService from "../../services/user.service";
 import authService from "../../services/auth.service";
 import "./ProfilePage.css";
+import Menu from "../../components/Menu/Menu";
 
 const ProfilePage = () => {
   const { user } = useContext(AuthContext);

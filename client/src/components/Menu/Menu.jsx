@@ -1,48 +1,55 @@
-// import { Row, Col, Nav, Tab, Sonnet  } from "react-bootstrap";
-// import { CgProfile } from "react-icons/cg";
-// import { BiBuildingHouse } from "react-icons/bi";
-// import { BiMessageSquareDetail } from "react-icons/bi";
-// // import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Button, Row, Col, ListGroup, Card } from "react-bootstrap";
+import { AuthContext } from "../../context/auth.context";
+import { useContext, useState, useEffect } from "react";
+import { CgProfile } from "react-icons/cg";
+import { BiBuildingHouse } from "react-icons/bi";
+import { BiMessageSquareDetail } from "react-icons/bi";
+import { Link, useNavigate } from "react-router-dom";
 
-// function menu() {
-//   return (
-//     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-//       <Row>
-//         <Col sm={3}>
-//           <Nav variant="pills" className="flex-column">
-//             <Nav.Item>
-//               <Nav.Link eventKey="first">
-//                 <CgProfile />
-//                 Profile
-//               </Nav.Link>
-//             </Nav.Item>
-//             <Nav.Item>
-//               <Nav.Link eventKey="second">
-//                 <BiBuildingHouse />
-//                 Living places
-//               </Nav.Link>
-//             </Nav.Item>
-//             <Nav.Item>
-//               <Nav.Link eventKey="second">
-//                 <BiMessageSquareDetail />
-//                 Messages
-//               </Nav.Link>
-//             </Nav.Item>
-//           </Nav>
-//         </Col>
-//         <Col sm={9}>
-//           <Tab.Content>
-//             <Tab.Pane eventKey="first">
-//               <Sonnet />
-//             </Tab.Pane>
-//             <Tab.Pane eventKey="second">
-//               <Sonnet />
-//             </Tab.Pane>
-//           </Tab.Content>
-//         </Col>
-//       </Row>
-//     </Tab.Container>
-//   );
-// }
 
-// export default menu;
+const Menu = () => {
+  const { user } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  return (
+    <Container>
+      <Row>
+        <Col md={3}>
+          <div className="profile-card border">
+            <div className="profile-card-header">
+              <div className="row">
+                <div className="col-5 d-flex justify-content-center"></div>
+                <div className="col-7 pt-2">
+                  {user && (
+                    <p className="text-dark fw-normal username">
+                      {user.username}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+          <ListGroup>
+            <ListGroup.Item>
+              <CgProfile /> <Link to="/profile">Profile</Link>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <BiBuildingHouse />
+              <Link to="/profile/living-places">Living places</Link>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <BiMessageSquareDetail />
+              <Link to="/profile/messages">Messages</Link>
+            </ListGroup.Item>
+          </ListGroup>
+        </Col>
+       
+       </Row>
+
+       
+    </Container>
+  );
+};
+
+export default Menu;
