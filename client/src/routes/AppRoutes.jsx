@@ -7,8 +7,11 @@ import ProfileLivingPlaces from "./../pages/ProfileLivingPlaces/ProfileLivingPla
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import ProfileMessages from "./../pages/ProfileMessages/ProfileMessages";
 import PrivateRoute from "./PrivateRoute";
+import NewLivingPlaceFormPage from "./../pages/NewLivingPlaceFormPage/NewLivingPlaceFormPage";
 
 import { Routes, Route } from "react-router-dom";
+import EditLivingPlacesForm from "../components/EditLivingPlaceForm/EditLivingPlaceForm";
+import EditLivingPlaceFormPage from "../pages/EditLivingPlaceFormPage/EditLivingPlaceFormPage";
 
 const AppRoutes = () => {
   return (
@@ -18,18 +21,19 @@ const AppRoutes = () => {
       <Route path="/living-places/:id" element={<LivingPlaceDetailPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/login" element={<LoginPage />} />
-
       <Route path="/profile" element={<PrivateRoute />}>
         <Route path="" element={<ProfilePage />} />
-        <Route
-          path="/profile/living-places"
-          element={<ProfileLivingPlaces />}
-        />
-        <Route path="/profile/messages" element={<ProfileMessages />} />
       </Route>
-
+      <Route path="/profile/living-places" element={<PrivateRoute />}>
+        <Route path="" element={<ProfileLivingPlaces />} />
+        <Route path="create" element={<NewLivingPlaceFormPage />} />
+        <Route path=":id/edit" element={<EditLivingPlaceFormPage />} />
+      </Route>
+      <Route path="/profile/messages" element={<PrivateRoute />}>
+        <Route path="" element={<ProfileMessages />} />
+      </Route>
       <Route path="*" element={<h1>404</h1>} />
-    </Routes>
+    </Routes> 
   );
 };
 

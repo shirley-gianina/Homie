@@ -20,8 +20,8 @@ class ProfileService {
     return this.api.get(`/`);
   };
 
-  updateUserProfile = () => {
-    return this.api.put(`/`);
+  updateUserProfile = (data) => {
+    return this.api.put(`/`, data);
   };
 
   deleteUserProfile = () => {

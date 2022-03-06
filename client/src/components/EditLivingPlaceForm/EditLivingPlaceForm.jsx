@@ -1,128 +1,161 @@
+import { useEffect } from "react";
 import { useState, useContext } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import homieService from "../../services/homie.service";
 import uploadService from "../../services/upload.service";
+import "./EditLivingPlaceForm.css";
 
-const NewLivingPlaceForm = () => {
- const [livingPlaceData, setlivingPlaceData] = useState({
-   title: "",
-   category: "",
-   images: [],
-   price: "",
-   description: "",
-   condition: "",
-   m2: "",
-   bedrooms: "",
-   bathrooms: "",
-   elevator: false,
-   heating: false,
-   "reduced mobility": false,
-   parking: false,
-   terrace: false,
-   garden: false,
-   "swimming pool": false,
-   "air conditioning": false,
-   "pets allowed": false,
-   address: "",
-   city: "",
-   province: "",
-   zipcode: "",
-   country: "",
- });
+const EditLivingPlaceForm = ({ id }) => {
+  const [livingPlaceData, setlivingPlaceData] = useState({
+    title: "",
+    category: "",
+    images: [],
+    price: "",
+    description: "",
+    condition: "",
+    m2: "",
+    bedrooms: "",
+    bathrooms: "",
+    elevator: false,
+    heating: false,
+    "reduced mobility": false,
+    parking: false,
+    terrace: false,
+    garden: false,
+    "swimming pool": false,
+    "air conditioning": false,
+    "pets allowed": false,
+    address: "",
+    city: "",
+    province: "",
+    zipcode: "",
+    country: "",
+  });
 
- const [loadingImage, setLoadingImage] = useState(false);
+  const [loadingImage, setLoadingImage] = useState(false);
 
- const navigate = useNavigate();
+  useEffect(() => {
+    homieService.getOneLivingPlace(id).then((response) => {
+      const place = response.data;
+      setlivingPlaceData({
+        title: place.title,
+        category: place.category,
+        images: place.images,
+        price: place.price,
+        description: place.description,
+        condition: place.condition,
+        address: place.location.address,
+        city: place.location.city,
+        province: place.location.province,
+        zipcode: place.location.zipcode,
+        country: place.location.country,
+        m2: place.features.m2,
+        bedrooms: place.features.bedrooms,
+        bathrooms: place.features.bathrooms,
 
- const handleInputChange = (e) => {
-   const { name, type, value, checked } = e.target;
-   const inputValue = type === "checkbox" ? checked : value;
+        elevator: place.amenities.elevator,
+        heating: place.amenities.heating,
+        "reduced mobility": place.amenities["reduced mobility"],
+        parking: place.amenities.parking,
+        terrace: place.amenities.terrace,
+        garden: place.amenities.garden,
+        "swimming pool": place.amenities["swimming pool"],
+        "air conditioning": place.amenities["air conditioning"],
+        "pets allowed": place.amenities["pets allowed"],
+      });
+    });
+  }, []);
 
-   setlivingPlaceData({
-     ...livingPlaceData,
-     [name]: inputValue,
-   });
- };
+  const navigate = useNavigate();
 
- const uploadLivingPlaceImages = (e) => {
-   setLoadingImage(true);
+  const handleInputChange = (e) => {
+    const { name, type, value, checked } = e.target;
+    const inputValue = type === "checkbox" ? checked : value;
 
-   const uploadData = new FormData();
+    setlivingPlaceData({
+      ...livingPlaceData,
+      [name]: inputValue,
+    });
+  };
 
-   //www.freecodecamp.org/news/formdata-explained/
+  const uploadLivingPlaceImages = (e) => {
+    setLoadingImage(true);
 
-   for (let i = 0; i < e.target.files.length; i++) {
-     uploadData.append("images", e.target.files[i]);
-   }
+    const uploadData = new FormData();
 
-   uploadService
-     .uploadImage(uploadData)
-     .then(({ data }) => {
-       const newImages = [...livingPlaceData.images, ...data.cloudinaryUrls];
-       setLoadingImage(false);
-       setlivingPlaceData({
-         ...livingPlaceData,
-         images: newImages,
-       });
-     })
-     .catch((err) => console.log(err));
- };
+    //www.freecodecamp.org/news/formdata-explained/
 
- const handleSubmit = (e) => {
-   e.preventDefault();
+    for (let i = 0; i < e.target.files.length; i++) {
+      uploadData.append("images", e.target.files[i]);
+    }
 
-   homieService
-     .createLivingPlace({
-       title: livingPlaceData.title,
-       category: livingPlaceData.category,
-       images: livingPlaceData.images,
-       price: livingPlaceData.price,
-       description: livingPlaceData.description,
-       condition: livingPlaceData.condition,
-       location: {
-         address: livingPlaceData.address,
-         city: livingPlaceData.city,
-         province: livingPlaceData.province,
-         zipcode: livingPlaceData.zipcode,
-         country: livingPlaceData.country,
-       },
-       features: {
-         m2: livingPlaceData.m2,
-         bedrooms: livingPlaceData.bedrooms,
-         bathrooms: livingPlaceData.bathrooms,
-       },
-       amenities: {
-         elevator: livingPlaceData.elevator,
-         heating: livingPlaceData.heating,
-         "reduced mobility": livingPlaceData["reduced mobility"],
-         parking: livingPlaceData.parking,
-         terrace: livingPlaceData.terrace,
-         garden: livingPlaceData.garden,
-         "swimming pool": livingPlaceData["swimming pool"],
-         "air conditioning": livingPlaceData["air conditioning"],
-         "pets allowed": livingPlaceData["pets allowed"],
-       },
-     })
-     .then(({ data }) => {
-       console.log(data);
-       navigate("/profile/living-places");
-     })
-     .catch((err) => console.log(err));
- };
+    uploadService
+      .uploadImage(uploadData)
+      .then(({ data }) => {
+        const newImages = [...livingPlaceData.images, ...data.cloudinaryUrls];
+        setLoadingImage(false);
+        setlivingPlaceData({
+          ...livingPlaceData,
+          images: newImages,
+        });
+      })
+      .catch((err) => console.log(err));
+  };
 
- const removeImage = (image) => {
-   const newImages = livingPlaceData.images.filter((item) => item !== image);
-   setlivingPlaceData({
-     ...livingPlaceData,
-     images: newImages,
-   });
- };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+    homieService
+      .editLivingPlace(id, {
+        title: livingPlaceData.title,
+        category: livingPlaceData.category,
+        images: livingPlaceData.images,
+        price: livingPlaceData.price,
+        description: livingPlaceData.description,
+        condition: livingPlaceData.condition,
+        location: {
+          address: livingPlaceData.address,
+          city: livingPlaceData.city,
+          province: livingPlaceData.province,
+          zipcode: livingPlaceData.zipcode,
+          country: livingPlaceData.country,
+        },
+        features: {
+          m2: livingPlaceData.m2,
+          bedrooms: livingPlaceData.bedrooms,
+          bathrooms: livingPlaceData.bathrooms,
+        },
+        amenities: {
+          elevator: livingPlaceData.elevator,
+          heating: livingPlaceData.heating,
+          "reduced mobility": livingPlaceData["reduced mobility"],
+          parking: livingPlaceData.parking,
+          terrace: livingPlaceData.terrace,
+          garden: livingPlaceData.garden,
+          "swimming pool": livingPlaceData["swimming pool"],
+          "air conditioning": livingPlaceData["air conditioning"],
+          "pets allowed": livingPlaceData["pets allowed"],
+        },
+      })
+      .then(({ data }) => {
+        console.log(data);
+        navigate("/profile/living-places");
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const removeImage = (image) => {
+    const newImages = livingPlaceData.images.filter((item) => item !== image);
+    setlivingPlaceData({
+      ...livingPlaceData,
+      images: newImages,
+    });
+  };
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h5 className="fw-bold mb-3 fs-3 text-primary">New Living Place</h5>
+      <h5 className="fw-bold mb-3 fs-3 text-primary">Edit Living Place</h5>
       <Row>
         <Col md={12}>
           <Form.Group className="mb-3" controlId="title">
@@ -385,11 +418,11 @@ const NewLivingPlaceForm = () => {
       </Form.Group>
       <div className="d-flex">
         <Button variant="primary" type="submit" className="ms-auto">
-          Create new living place
+          Edit living place
         </Button>
       </div>
     </Form>
   );
 };
 
-export default NewLivingPlaceForm;
+export default EditLivingPlaceForm;

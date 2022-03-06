@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 import { useEffect } from "react";
 import authService from "../services/auth.service";
+import profileService from "../services/profile.service";
 
 const AuthContext = createContext();
 
@@ -21,6 +22,14 @@ function AuthProviderWrapper(props) {
     return localStorage.getItem("authToken");
   };
 
+  const loadUser = () => {
+    setIsLoading(true)
+    profileService.getUserProfile().then((response) => {
+      setUser(response.data);
+      setIsLoading(false)
+    });
+  };
+
   const authenticateUser = () => {
     const storedToken = getToken();
     setIsLoading(true);
@@ -31,10 +40,8 @@ function AuthProviderWrapper(props) {
       authService
         .verify(storedToken)
         .then(({ data }) => {
-          const user = data;
           setIsLoggedIn(true);
-          setIsLoading(false);
-          setUser(user);
+          loadUser();
         })
         .catch(() => logOutUser());
     }
@@ -55,6 +62,7 @@ function AuthProviderWrapper(props) {
         isLoggedIn,
         isLoading,
         user,
+        loadUser,
         storeToken,
         authenticateUser,
         logOutUser,

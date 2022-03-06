@@ -38,16 +38,6 @@ function SignupForm() {
 
   return (
     <Form onSubmit={handleSubmit} className="signup-form">
-      <Row></Row>
-      {/* <Form.Group className="mb-3 w-100">
-        <Form.Label>username</Form.Label>
-        <Form.Control
-          type="text"
-          name="username"
-          value={signupForm.username}
-          onChange={handleInputChange}
-        />
-      </Form.Group> */}
       <Row>
         <Col md={6}>
           <Form.Group className="mb-3 w-100">

@@ -29,8 +29,8 @@ class HomieService {
     return this.api.post(`/living-places`, homie);
   };
 
-  editLivingPlace = (id) => {
-    return this.api.put(`/living-places/${id}`);
+  editLivingPlace = (id, data) => {
+    return this.api.put(`/living-places/${id}`, data);
   };
 
   deleteLivingPlace = (id) => {

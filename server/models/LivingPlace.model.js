@@ -4,7 +4,7 @@ const LivingPlaceSchema = new Schema(
   {
     title: {
       type: String,
-      // required: [true, "Image is mandatory"],
+      // required: [true, “Image is mandatory”],
     },
     owner: {
       type: Schema.Types.ObjectId,
@@ -16,7 +16,7 @@ const LivingPlaceSchema = new Schema(
     },
     images: {
       type: [String],
-      // required: [true, "Image is mandatory"],
+      // required: [true, “Image is mandatory”],
     },
     price: {
       type: Number,
@@ -25,27 +25,27 @@ const LivingPlaceSchema = new Schema(
     location: {
       address: {
         type: String,
-        // required: [true, "La ciudad es requerida"],
+        // required: [true, “La ciudad es requerida”],
         trim: true,
       },
       city: {
         type: String,
-        // required: [true, "La ciudad es requerida"],
+        // required: [true, “La ciudad es requerida”],
         trim: true,
       },
       province: {
         type: String,
-        // required: [true, "Province is required"],
+        // required: [true, “Province is required”],
         trim: true,
       },
       zipcode: {
         type: String,
-        // required: [true, "Zipcode is required"],
+        // required: [true, “Zipcode is required”],
         trim: true,
       },
       country: {
         type: String,
-        // required: [true, "Country"],
+        // required: [true, “Country”],
         trim: true,
       },
     },
@@ -70,28 +70,24 @@ const LivingPlaceSchema = new Schema(
         // required: true,
       },
       amenities: {
-        type: [
-          {
-            type: String,
-            enum: [
-              "elevator",
-              "heating",
-              "reduced mobility",
-              "parking",
-              "terrace",
-              "garden",
-              "swimming pool",
-              "air conditioning",
-              "pets allowed",
-            ],
-          },
+        type: [String],
+        enum: [
+          "elevator",
+          "heating",
+          "reduced mobility",
+          "parking",
+          "terrace",
+          "garden",
+          "swimming pool",
+          "air conditioning",
+          "pets allowed",
         ],
       },
     },
   },
-
   {
     timestamps: true,
   }
 );
+
 module.exports = model("LivingPlace", LivingPlaceSchema);

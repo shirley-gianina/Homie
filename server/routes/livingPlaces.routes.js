@@ -1,7 +1,9 @@
 const router = require("express").Router();
 const LivingPlace = require("./../models/LivingPlace.model");
 const Message = require("./../models/Message.model");
+const User = require("./../models/User.model");
 const { isAuthenticated } = require("../middlewares/jwt.middleware");
+const fileUploader = require("../config/cloudinary.config");
 
 router.get("/living-places", (req, res) => {
   const { query } = req;
@@ -50,28 +52,56 @@ router.post("/living-places", isAuthenticated, (req, res) => {
   const { payload } = req;
   const {
     title,
-    description,
-    price,
     category,
-    condition,
-    features,
-    location,
     images,
+    price,
+    m2,
+    bedrooms,
+    bathrooms,
+    amenities,
+    address,
+    city,
+    province,
+    zipcode,
+    country,
+    description,
+    condition,
   } = req.body;
   const userId = payload._id;
+
+  console.log(req.body, req.payload, "a ver que sale de esto");
+
+  const features = {
+    m2,
+    bedrooms,
+    bathrooms,
+    amenities: [amenities],
+  };
+
+  const location = {
+    address,
+    city,
+    province,
+    zipcode,
+    country,
+  };
 
   LivingPlace.create({
     owner: userId,
     title,
-    description,
-    price,
+    owner: payload._id,
     category,
+    images,
+    price,
+    location,
+    description,
     condition,
     features,
-    location,
-    images,
   })
-    .then((response) => res.json(response))
+    .then((response) => {
+      console.log(response, "creado place");
+      res.json(response);
+    })
     .catch((err) => res.status(500).json(err));
 });
 
@@ -80,22 +110,24 @@ router.put("/living-places/:id", isAuthenticated, (req, res) => {
   const {
     title,
     owner,
-    address,
-    price,
     category,
-    condition,
+    images,
+    price,
+    location,
     description,
+    condition,
     features,
   } = req.body;
 
   LivingPlace.findByIdAndUpdate(id, {
     title,
     owner,
-    address,
-    price,
     category,
-    condition,
+    images,
+    price,
+    location,
     description,
+    condition,
     features,
   })
     .then((response) => res.json(response))

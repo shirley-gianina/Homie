@@ -1,48 +1,60 @@
 import React, { useContext } from "react";
-import { ListGroup } from "react-bootstrap";
+import { Card, Col, ListGroup, Nav, Row } from "react-bootstrap";
 import { CgProfile } from "react-icons/cg";
 import { BiBuildingHouse } from "react-icons/bi";
 import { BiMessageSquareDetail } from "react-icons/bi";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
+import "./ProfileMenu.css";
+import { NavLink } from "react-router-dom";
 
 function ProfileMenu() {
   const { user } = useContext(AuthContext);
+
+  const formatDate = (createdAt) => {
+    const date = new Date(createdAt)
+    return date.toDateString()
+  }
   return (
     <>
-      <div className="profile-card border">
-        <div className="profile-card-header">
-          <div className="row">
-            <div className="col-5 d-flex justify-content-center">
+      <Card className="profile-card border">
+        <Card.Header className="profile-card-header">
+          <Row className="align-items-center">
+            <Col md={5} className="text-center">
               <img
                 className="rounded-circle shadow"
                 src={user?.image}
                 alt=""
-                width="85px"
+                width="115px"
+                height="115px"
               />
-            </div>
-            <div className="col-7 pt-2">
-              <p className="text-dark fw-normal">
-                {user?.firstName} {user?.lasttName}
+            </Col>
+            <Col md={7}>
+              <p className="text-dark fw-bold fs-4 m-0">
+                {user?.firstName} {user?.lastName}
               </p>
-              <p className="text-muted"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <ListGroup>
-        <ListGroup.Item>
-          <CgProfile /> <Link to="/profile">Profile</Link>
-        </ListGroup.Item>
-        <ListGroup.Item>
-          <BiBuildingHouse />
-          <Link to="/profile/living-places">Living places</Link>
-        </ListGroup.Item>
-        <ListGroup.Item>
-          <BiMessageSquareDetail /> <Link to="/profile/messages">Messages</Link>
-        </ListGroup.Item>
-      </ListGroup>
+              <p className="text-muted m-0">
+                Joined {formatDate(user?.createdAt)}
+              </p>
+            </Col>
+          </Row>
+        </Card.Header>
+        <Card.Body>
+          <ListGroup>
+            <ListGroup.Item href="/profile">
+              <CgProfile className="me-2" />
+              <NavLink to="/profile">Profile</NavLink>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <BiBuildingHouse className="me-2" />
+              <NavLink to="/profile/living-places">Living places</NavLink>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <BiMessageSquareDetail className="me-2" />
+              <NavLink to="/profile/messages">Messages</NavLink>
+            </ListGroup.Item>
+          </ListGroup>
+        </Card.Body>
+      </Card>
     </>
   );
 }
