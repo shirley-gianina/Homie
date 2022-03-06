@@ -5,3 +5,7 @@ a {
 body {
   font-family: "Montserrat", sans-serif;
 }
+
+main {
+  margin-bottom: 150px;
+}
