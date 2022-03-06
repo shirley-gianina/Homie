@@ -14,15 +14,20 @@ const LivingPlaceSchema = new Schema(
       type: String,
       enum: ["flat", "apartment", "penthouse", "duplex", "house"],
     },
-    imageUrl: {
-      type: String,
+    images: {
+      type: [String],
       // required: [true, "Image is mandatory"],
     },
     price: {
       type: Number,
       // required: [true, "Image is mandatory"],
     },
-    address: {
+    location: {
+      address: {
+        type: String,
+        // required: [true, "La ciudad es requerida"],
+        trim: true,
+      },
       city: {
         type: String,
         // required: [true, "La ciudad es requerida"],

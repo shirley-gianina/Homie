@@ -4,7 +4,35 @@ const Message = require("./../models/Message.model");
 const { isAuthenticated } = require("../middlewares/jwt.middleware");
 
 router.get("/living-places", (req, res) => {
-  LivingPlace.find()
+  const { query } = req;
+  const filter = {};
+  let limit = 100;
+
+  if (query.city) {
+    filter["location.city"] = query.city;
+  }
+
+  if (query.country) {
+    filter["location.country"] = query.country;
+  }
+
+  if (query.category) {
+    filter["category"] = query.category;
+  }
+
+  if (query.condition) {
+    filter["condition"] = query.condition;
+  }
+
+  if (query.limit) {
+    limit = query.limit;
+  }
+
+  console.log(filter);
+
+  LivingPlace.find(filter)
+    .populate("owner")
+    .limit(limit)
     .then((response) => res.json(response))
     .catch((err) => res.status(500).json(err));
 });
@@ -13,31 +41,35 @@ router.get("/living-places/:id", (req, res) => {
   const { id } = req.params;
 
   LivingPlace.findById(id)
+    .populate("owner")
     .then((response) => res.json(response))
     .catch((err) => res.status(500).json(err));
 });
 
 router.post("/living-places", isAuthenticated, (req, res) => {
+  const { payload } = req;
   const {
     title,
-    owner,
-    address,
+    description,
     price,
     category,
     condition,
-    description,
     features,
+    location,
+    images,
   } = req.body;
+  const userId = payload._id;
 
   LivingPlace.create({
+    owner: userId,
     title,
-    owner,
-    address,
+    description,
     price,
     category,
     condition,
-    description,
-    features
+    features,
+    location,
+    images,
   })
     .then((response) => res.json(response))
     .catch((err) => res.status(500).json(err));
@@ -56,7 +88,7 @@ router.put("/living-places/:id", isAuthenticated, (req, res) => {
     features,
   } = req.body;
 
-  LivingPlace.findOneAndUpdate({
+  LivingPlace.findByIdAndUpdate(id, {
     title,
     owner,
     address,
@@ -70,18 +102,20 @@ router.put("/living-places/:id", isAuthenticated, (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-router.post("/livingPlaces/:id/message", isAuthenticated, (req, res) => {
+router.post("/living-places/:id/message", (req, res) => {
   const { id } = req.params;
-  const { message, owner } = req.body;
+  const { message, name, phone, email } = req.body;
 
-  LivingPlace.findById(id).then((livingPlace) => {
-    return Message.create({ owner, livingPlace, message })
-      .then((response) => res.json(response))
-      .catch((err) => res.status(500).json(err));
-  });
+  LivingPlace.findById(id)
+    .then(() => {
+      return Message.create({ livingPlace: id, message, name, phone, email })
+        .then((response) => res.json(response))
+        .catch((err) => res.status(500).json(err));
+    })
+    .catch((err) => res.status(500).json(err));
 });
 
-router.delete("/livingPlaces/:id", isAuthenticated, (req, res) => {
+router.delete("/living-places/:id", isAuthenticated, (req, res) => {
   const { id } = req.params;
   LivingPlace.findByIdAndDelete(id)
     .then((response) => res.json(response))
