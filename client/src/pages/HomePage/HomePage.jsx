@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomeCard from "../../components/HomeCard/HomeCard";
 
 import CityCard from "../../components/CityCard/CityCard";
 import Header from "../../components/Header/Header";
 import { Carousel, Col, Container, Row } from "react-bootstrap";
+import { useState } from "react";
+import homieService from "../../services/homie.service";
 
 function HomePage() {
+
+const [places, setPlaces] = useState([])
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams({ limit: 4})
+    homieService.getAllLivingPlaces(searchParams)
+    .then((response) => {
+      setPlaces(response.data)
+    })
+  }, [])
+
+
   return (
     <>
       <Header />
@@ -70,7 +84,25 @@ function HomePage() {
           </Carousel.Item>
         </Carousel>
         <h2 className="mt-5 mb-3">Travelers’ Choice</h2>
-        <Row className="mb-5">
+        <Row>
+         { places.map((place) => {
+           return(
+              <Col md={3}>
+              <HomeCard 
+              id={place._id}
+              price={place.price}
+              location={place.location}
+              title={place.title}
+              images={place.images}
+              >
+              </HomeCard>
+              </Col>
+           )
+          })}
+
+
+        </Row>
+        {/* <Row className="mb-5">
           <Col md={3}>
             <HomeCard
               id="1"
@@ -135,7 +167,7 @@ function HomePage() {
               ]}
             />
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </>
   );

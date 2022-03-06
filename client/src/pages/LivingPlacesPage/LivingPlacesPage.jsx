@@ -10,18 +10,7 @@ function LivingPlacesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    // const query = {
-    //   city: searchParams.get("city"),
-    //   country: searchParams.get("country"),
-    //   category: searchParams.get("category"),
-    //   condition: searchParams.get("condition"),
-    // };
-
-    console.log("holi", searchParams.get("city"));
-
-    const query = Object.fromEntries([...searchParams]);
-    homieService.getAllLivingPlaces(query)
-    .then((response) => {
+    homieService.getAllLivingPlaces(searchParams).then((response) => {
       setPlaces(response.data);
     });
   }, [searchParams, setSearchParams]);

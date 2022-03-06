@@ -1,11 +1,10 @@
 import { Container, Button, Row, Col, ListGroup, Form } from "react-bootstrap";
 import { AuthContext } from "../../context/auth.context";
 import { useContext, useState } from "react";
-import { CgProfile } from "react-icons/cg";
-import { BiBuildingHouse } from "react-icons/bi";
-import { BiMessageSquareDetail } from "react-icons/bi";
+
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../../services/auth.service";
+import ProfileMenu from "../../components/ProfileMenu/ProfileMenu";
 
 const ProfilePage = ({ username, firstName, lastName, phone, email }) => {
   const { user } = useContext(AuthContext);
@@ -42,42 +41,12 @@ const ProfilePage = ({ username, firstName, lastName, phone, email }) => {
   }
 
   return (
-    <Container>
+    <Container className="mt-5">
       <Row>
-        <Col md={6}>
-          <div className="profile-card border">
-            <div className="profile-card-header">
-              <div className="row">
-                <div className="col-5 d-flex justify-content-center">
-                  <img
-                    className="rounded-circle shadow"
-                    src="/images/avatar-profile.png"
-                    alt=""
-                    width="85px"
-                  />
-                </div>
-                <div className="col-7 pt-2">
-                  <p className="text-dark fw-normal"> hola</p>
-                  <p className="text-muted"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <ListGroup>
-            <ListGroup.Item>
-              <CgProfile /> <Link to="/profile">Profile</Link>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <BiBuildingHouse />
-              <Link to="/profile">Living places</Link>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <BiMessageSquareDetail /> <Link to="/profile">Messages</Link>
-            </ListGroup.Item>
-          </ListGroup>
+        <Col md={4}>
+          <ProfileMenu />
         </Col>
-        <Col md={6}>
+        <Col md={8}>
           <Form onSubmit={handleSubmit} className="updateForm">
             <Form.Group className="mb-3 w-100">
               <Form.Label>Firstname</Form.Label>

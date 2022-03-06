@@ -21,10 +21,13 @@ const AppRoutes = () => {
 
       <Route path="/profile" element={<PrivateRoute />}>
         <Route path="" element={<ProfilePage />} />
+        <Route
+          path="/profile/living-places"
+          element={<ProfileLivingPlaces />}
+        />
+        <Route path="/profile/messages" element={<ProfileMessages />} />
       </Route>
 
-      <Route path="/profile/living-places" element={<ProfileLivingPlaces />} />
-      <Route path="/profile/messages" element={<ProfileMessages />} />
       <Route path="*" element={<h1>404</h1>} />
     </Routes>
   );

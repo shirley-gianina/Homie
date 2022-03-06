@@ -16,8 +16,8 @@ class HomieService {
     });
   }
 
-  getAllLivingPlaces = (query) => {
-    const queryString = new URLSearchParams(query).toString();
+  getAllLivingPlaces = (searchParams) => {
+    const queryString = searchParams.toString();
     return this.api.get(`/living-places/?${queryString}`);
   };
 
@@ -34,14 +34,14 @@ class HomieService {
   };
 
   deleteLivingPlace = (id) => {
-    return this.api.delete(`/livingPlaces/${id}`);
+    return this.api.delete(`/living-places/${id}`);
   };
 
-  saveMessageLivingPlace = (id) => {
-    return this.api.create(`/livingPlaces/${id}`);
+  saveMessageLivingPlace = (id, message) => {
+    return this.api.post(`/living-places/${id}/message`, message);
   };
 }
- 
+
 const homieService = new HomieService();
 
 export default homieService;
