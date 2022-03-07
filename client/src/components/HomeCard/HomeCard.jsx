@@ -36,7 +36,7 @@ function HomeCard({ id, price, location, title, images }) {
             {location.city}, {location.province}
           </Card.Text>
           <Card.Title className="text-dark">{title}</Card.Title>
-          <Card.Text className="text-dark">€{price} / Mes</Card.Text>
+          <Card.Text className="text-dark">€{price} / Month</Card.Text>
         </Card.Body>
       </Card>
     </Link>

@@ -4,7 +4,7 @@ const uploader = require("./../config/cloudinary.config");
 
 router.post("/image", uploader.array("images"), (req, res) => {
   if (!req.files.length) {
-    res.status(500).json({ errorMessage: "Error caragndo el archivo" });
+    res.status(500).json({ errorMessage: "Error while uploading" });
     return;
   }
 

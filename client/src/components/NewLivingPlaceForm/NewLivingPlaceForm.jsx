@@ -21,9 +21,7 @@ const NewLivingPlaceForm = () => {
    parking: false,
    terrace: false,
    garden: false,
-   "swimming pool": false,
-   "air conditioning": false,
-   "pets allowed": false,
+
    address: "",
    city: "",
    province: "",

@@ -31,7 +31,7 @@ const [places, setPlaces] = useState([])
               <Col md={3}>
                 <CityCard
                   imageUrl="./../../images/newyork.jpeg"
-                  city="Madrid"
+                  city="New York"
                 />
               </Col>
               <Col md={3}>
@@ -77,7 +77,7 @@ const [places, setPlaces] = useState([])
               <Col md={3}>
                 <CityCard
                   imageUrl="./../../images/newyork.jpeg"
-                  city="Peru"
+                  city="New York"
                 />
               </Col>
             </Row>

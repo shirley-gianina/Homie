@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Form, Button, Row, Col, Container, Card } from "react-bootstrap";
-import CardHeader from "react-bootstrap/esm/CardHeader";
-
 import { useNavigate } from "react-router-dom";
 import homieService from "../../services/homie.service";
+import { MessageContext } from "../../context/userMessage.context";
+import { AuthContext } from "../../context/auth.context";
 
 function ContactForm({ id, owner }) {
+  const { setShowMessage, setMessageInfo } = useContext(MessageContext);
+
+  const { user } = useContext(AuthContext);
+
   const [messageForm, setMessageForm] = useState({
     // owner: "",
     email: "",
     message: "",
     phone: "",
-    name: ""
+    name: "",
   });
 
   const navigate = useNavigate();
@@ -29,7 +33,13 @@ function ContactForm({ id, owner }) {
 
     homieService
       .saveMessageLivingPlace(id, messageForm)
-      .then((response) => console.log("message sent"))
+      .then(({ response }) => {
+        setShowMessage(true);
+        setMessageInfo({
+          title: "Completed",
+          desc: "Message sent succesfully!",
+        });
+      })
       .catch((err) => console.log(err));
   }
 
