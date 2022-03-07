@@ -8,8 +8,13 @@ function ProfileMessages() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    profileService.getMessages().then((response) => setMessages(response.data));
+    setInterval(() => {
+      profileService
+        .getMessages()
+        .then((response) => setMessages(response.data));
+    }, 2000);
   }, []);
+
   return (
     <>
       <Container className="mt-5">
@@ -19,7 +24,12 @@ function ProfileMessages() {
           </Col>
           <Col md={8}>
             {messages.map((message, i) => {
-              return <p key={i}>{message.name}</p>;
+              return (
+                <>
+                  <p key={i}>{message.name}</p>
+                  <p key={i}>{message.message}</p>
+                </>
+              );
             })}
           </Col>
         </Row>

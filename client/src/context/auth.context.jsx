@@ -41,6 +41,7 @@ function AuthProviderWrapper(props) {
         .verify(storedToken)
         .then(({ data }) => {
           setIsLoggedIn(true);
+          // cargamos los datos de la base de datos
           loadUser();
         })
         .catch(() => logOutUser());
@@ -62,6 +63,7 @@ function AuthProviderWrapper(props) {
         isLoggedIn,
         isLoading,
         user,
+        // lo exponemos en todo el contexto de la pagina para que se pueda refrescar cuando se necesite
         loadUser,
         storeToken,
         authenticateUser,
