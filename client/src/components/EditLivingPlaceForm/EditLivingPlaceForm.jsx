@@ -8,6 +8,7 @@ import "./EditLivingPlaceForm.css";
 
 const EditLivingPlaceForm = ({ id }) => {
   const [livingPlaceData, setlivingPlaceData] = useState({
+    //para hacerlo mas sencillo ponemos los datos al mismo nivel
     title: "",
     category: "",
     images: [],
@@ -38,6 +39,7 @@ const EditLivingPlaceForm = ({ id }) => {
   useEffect(() => {
     homieService.getOneLivingPlace(id).then((response) => {
       const place = response.data;
+      //para setear, adaptamos los datos que recibimos de la base de datos a al estado de la pagina
       setlivingPlaceData({
         title: place.title,
         category: place.category,
@@ -53,7 +55,6 @@ const EditLivingPlaceForm = ({ id }) => {
         m2: place.features.m2,
         bedrooms: place.features.bedrooms,
         bathrooms: place.features.bathrooms,
-
         elevator: place.amenities.elevator,
         heating: place.amenities.heating,
         "reduced mobility": place.amenities["reduced mobility"],
@@ -106,6 +107,7 @@ const EditLivingPlaceForm = ({ id }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // adaptamos los datos del estado a lo que espera el modelo de la base de datos
     homieService
       .editLivingPlace(id, {
         title: livingPlaceData.title,
