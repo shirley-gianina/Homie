@@ -18,11 +18,11 @@ function LivingPlaceDetailPage() {
     });
   }, []);
 
-  const [index, setIndex] = useState(0);
+  // const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+  // const handleSelect = (selectedIndex, e) => {
+  //   setIndex(selectedIndex);
+  // };
 
   return (
     // width={idx % 4 == 0 ? 200 / (idx + 1)}

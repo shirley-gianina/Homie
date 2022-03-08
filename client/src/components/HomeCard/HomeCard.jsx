@@ -37,7 +37,7 @@ function HomeCard({ id, price, location, title, images }) {
           </Card.Text>
           <Card.Title className="text-dark title-home-card">{title}</Card.Title>
           <Card.Text className="text-dark text-home-card">
-            €{price} / Mes
+            €{price} / Month
           </Card.Text>
         </Card.Body>
       </Card>
