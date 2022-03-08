@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Card } from "react-bootstrap";
 import ProfileMenu from "../../components/ProfileMenu/ProfileMenu";
 import profileService from "../../services/profile.service";
+import "./ProfileMessages.css"
 
 function ProfileMessages() {
   const [messages, setMessages] = useState([]);
@@ -30,8 +31,17 @@ function ProfileMessages() {
             {messages.map((message, i) => {
               return (
                 <>
-                  <p key={i}>{message.name}</p>
-                  <p key={i}>{message.message}</p>
+                  <Card>
+                    <Card.Body>
+                      <p className="name" key={i}>
+                        {message.name}
+                      </p>
+                      <p className="phone" key={i}>
+                        {message.phone}
+                      </p>
+                      <p key={i}>{message.message}</p>
+                    </Card.Body>
+                  </Card>
                 </>
               );
             })}

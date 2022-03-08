@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./styles/bootstrap.css";
+import "./styles/bootstrap.css"
 
-import { AuthProviderWrapper } from "./context/auth.context";
 import { MessageProviderWrapper } from "./context/userMessage.context";
+import { AuthProviderWrapper } from "./context/auth.context";
 
 import { BrowserRouter as Router } from "react-router-dom";
 

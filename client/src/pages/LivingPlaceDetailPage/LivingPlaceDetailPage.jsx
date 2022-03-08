@@ -1,4 +1,4 @@
-import { Carousel, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import homieService from "../../services/homie.service";
 import { useEffect, React, useState } from "react";

@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import uploadService from "../../services/upload.service";
-
 import profileService from "../../services/profile.service";
 import { AuthContext } from "../../context/auth.context";
 

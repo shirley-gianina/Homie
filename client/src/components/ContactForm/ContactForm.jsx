@@ -1,8 +1,7 @@
 import { useState, useContext } from "react";
 import { Form, Button, Row, Col, Container, Card } from "react-bootstrap";
-import { MessageContext } from "../../context/userMessage.context";
-
 import homieService from "../../services/homie.service";
+import { MessageContext } from "../../context/userMessage.context";
 
 function ContactForm({ id, owner }) {
 
@@ -15,7 +14,7 @@ function ContactForm({ id, owner }) {
     email: "",
     message: "",
     phone: "",
-    name: ""
+    name: "",
   });
 
 

@@ -33,7 +33,7 @@ function HomeCard({ id, price, location, title, images }) {
         </Card.Header>
         <Card.Body>
           <Card.Text className="text-muted mb-1">
-            {location.city}, {location.province}
+            {location.city}, {location.country}
           </Card.Text>
           <Card.Title className="text-dark title-home-card">{title}</Card.Title>
           <Card.Text className="text-dark text-home-card">
