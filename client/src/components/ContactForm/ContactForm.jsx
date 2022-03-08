@@ -1,14 +1,14 @@
 import { useState, useContext } from "react";
 import { Form, Button, Row, Col, Container, Card } from "react-bootstrap";
+// import { useNavigate } from "react-router-dom";
 import homieService from "../../services/homie.service";
 import { MessageContext } from "../../context/userMessage.context";
+// import { AuthContext } from "../../context/auth.context";
+
 
 function ContactForm({ id, owner }) {
-
-
-  const [setShowMessage, setMessageInfo] = useContext(MessageContext)
-
-
+  const { setShowMessage, setMessageInfo } = useContext(MessageContext);
+  // const { user } = useContext(AuthContext);
   const [messageForm, setMessageForm] = useState({
     // owner: "",
     email: "",
@@ -16,7 +16,6 @@ function ContactForm({ id, owner }) {
     phone: "",
     name: "",
   });
-
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -42,7 +41,7 @@ function ContactForm({ id, owner }) {
   }
 
   return (
-    <>
+   <>
       <Container>
         <Card className="p-3">
           <Card.Header className="bg-primary">
