@@ -33,10 +33,10 @@ function HomeCard({ id, price, location, title, images }) {
         </Card.Header>
         <Card.Body>
           <Card.Text className="text-muted mb-1">
-            {location.city}, {location.province}
+            {location.city}, {location.country}
           </Card.Text>
-          <Card.Title className="text-dark">{title}</Card.Title>
-          <Card.Text className="text-dark">€{price} / Month</Card.Text>
+          <Card.Title className="text-dark titleHomeCard">{title}</Card.Title>
+          <Card.Text className="text-dark textHomeCard">€{price} / Month</Card.Text>
         </Card.Body>
       </Card>
     </Link>

@@ -99,75 +99,7 @@ const [places, setPlaces] = useState([])
               </Col>
            )
           })}
-
-
         </Row>
-        {/* <Row className="mb-5">
-          <Col md={3}>
-            <HomeCard
-              id="1"
-              title="test1"
-              price={2}
-              location={{
-                province: "Madrid",
-                city: "Madrid",
-              }}
-              images={[
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-2_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-14_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-12_thumb.jpg",
-              ]}
-            />
-          </Col>
-          <Col md={3}>
-            <HomeCard
-              id="2"
-              title="test2"
-              price={2}
-              location={{
-                province: "Madrid",
-                city: "Madrid",
-              }}
-              images={[
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-12_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-2_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-14_thumb.jpg",
-              ]}
-            />
-          </Col>
-          <Col md={3}>
-            <HomeCard
-              id="3"
-              title="test3"
-              price={2}
-              location={{
-                province: "Almeria",
-                city: "Roquetas de mar",
-              }}
-              images={[
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-14_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-2_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-12_thumb.jpg",
-              ]}
-            />
-          </Col>
-          <Col md={3}>
-            <HomeCard
-              id="4"
-              title="test4"
-              price={7}
-              location={{
-                province: "Valencia",
-                city: "Valencia",
-              }}
-              images={[
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-18_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-14_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-12_thumb.jpg",
-              ]}
-            />
-          </Col>
-        </Row> */}
       </Container>
     </>
   );

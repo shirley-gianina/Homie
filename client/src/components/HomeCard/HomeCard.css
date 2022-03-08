@@ -1,5 +1,12 @@
 .home-card img {
     object-fit: cover;
     max-height: 170px;
+}
 
+.titleHomeCard{
+    font-size: 16px;
+}
+
+.textHomeCard {
+    font-size: 16px;
 }

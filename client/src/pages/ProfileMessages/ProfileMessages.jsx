@@ -32,8 +32,12 @@ function ProfileMessages() {
                 <>
                   <Card>
                     <Card.Body>
-                      <p className="name" key={i}>{message.name}</p>
-                      <p key={i}>{message.phone}</p>
+                      <p className="name" key={i}>
+                        {message.name}
+                      </p>
+                      <p className="phone" key={i}>
+                        {message.phone}
+                      </p>
                       <p key={i}>{message.message}</p>
                     </Card.Body>
                   </Card>
