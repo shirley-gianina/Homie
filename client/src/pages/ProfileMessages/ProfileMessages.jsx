@@ -8,12 +8,16 @@ function ProfileMessages() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    setInterval(() => {
+    const intervalID = setInterval(() => {
       profileService
         .getMessages()
         .then((response) => setMessages(response.data));
     }, 2000);
-  }, []);
+
+    return () =>  {
+      clearInterval(intervalID);
+    }
+  }, [])
 
   return (
     <>

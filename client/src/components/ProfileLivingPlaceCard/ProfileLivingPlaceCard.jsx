@@ -42,7 +42,7 @@ function ProfileLivingPlaceCard({ place }) {
           <Card.Title className="text-dark fs-6 fw-bold">
             {place.title}
           </Card.Title>
-          <Card.Text className="text-dark">€{place.price} / Mes</Card.Text>
+          <Card.Text className="text-dark">€{place.price} / Month</Card.Text>
         </Card.Body>
         <Card.Footer>
           <Row>

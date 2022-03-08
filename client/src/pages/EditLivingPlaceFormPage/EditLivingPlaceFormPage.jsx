@@ -5,7 +5,7 @@ import EditLivingPlaceForm from "../../components/EditLivingPlaceForm/EditLiving
 import ProfileMenu from "../../components/ProfileMenu/ProfileMenu";
 
 function EditLivingPlaceFormPage() {
-    const {id} = useParams()
+  const { id } = useParams();
   return (
     <>
       <Container className="mt-5">
@@ -14,7 +14,7 @@ function EditLivingPlaceFormPage() {
             <ProfileMenu />
           </Col>
           <Col md={8}>
-              <EditLivingPlaceForm id={id}/>
+            <EditLivingPlaceForm id={id} />
           </Col>
         </Row>
       </Container>

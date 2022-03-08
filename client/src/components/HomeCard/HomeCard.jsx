@@ -35,8 +35,10 @@ function HomeCard({ id, price, location, title, images }) {
           <Card.Text className="text-muted mb-1">
             {location.city}, {location.province}
           </Card.Text>
-          <Card.Title className="text-dark">{title}</Card.Title>
-          <Card.Text className="text-dark">€{price} / Mes</Card.Text>
+          <Card.Title className="text-dark title-home-card">{title}</Card.Title>
+          <Card.Text className="text-dark text-home-card">
+            €{price} / Mes
+          </Card.Text>
         </Card.Body>
       </Card>
     </Link>

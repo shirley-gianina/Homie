@@ -13,7 +13,7 @@ import AboutUsPage from "../pages/AboutUsPage/AboutUsPage";
 import ContactPage from "../pages/ContactPage/ContactPage";
 
 import { Routes, Route } from "react-router-dom";
-import EditLivingPlacesForm from "../components/EditLivingPlaceForm/EditLivingPlaceForm";
+// import EditLivingPlacesForm from "../components/EditLivingPlaceForm/EditLivingPlaceForm";
 import EditLivingPlaceFormPage from "../pages/EditLivingPlaceFormPage/EditLivingPlaceFormPage";
 
 const AppRoutes = () => {

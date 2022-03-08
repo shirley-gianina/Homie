@@ -1,6 +1,6 @@
 import React from "react";
 import NewLivingPlaceForm from "../../components/NewLivingPlaceForm/NewLivingPlaceForm";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "./NewLivingPlaceFormPage"
 import ProfileMenu from "../../components/ProfileMenu/ProfileMenu";
 

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import uploadService from "../../services/upload.service";
@@ -22,10 +22,12 @@ function ProfileForm() {
     uploadService
       .uploadImage(uploadData)
       .then(({ data }) => {
+    console.log(data);
+
         setLoadingImage(false);
         setUpdateForm({
           ...updateForm,
-          image: data.cloudinary_url,
+          image: data.cloudinaryUrls[0]
         });
       })
       .catch((err) => console.log(err));

@@ -403,7 +403,7 @@ const EditLivingPlaceForm = ({ id }) => {
         {livingPlaceData.images.map((image) => {
           return (
             <Col md={2} className="edit-preview mb-2">
-              <img className="w-100" src={image} alt="preview" />
+              <img className="w-100" height="100px" src={image} alt="preview" />
               <Button onClick={() => removeImage(image)}>X</Button>
             </Col>
           );

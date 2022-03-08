@@ -28,8 +28,6 @@ router.get("/living-places", (req, res) => {
     limit = query.limit;
   }
 
-  console.log(filter);
-
   LivingPlace.find(filter)
     .populate("owner")
     .limit(limit)
@@ -47,7 +45,7 @@ router.get("/living-places/:id", (req, res) => {
 });
 
 router.post("/living-places", isAuthenticated, (req, res) => {
-  const { payload } = req;
+  const userId = req.payload._id
   const {
     title,
     category,
@@ -60,11 +58,9 @@ router.post("/living-places", isAuthenticated, (req, res) => {
     condition,
   } = req.body;
 
-  console.log(req.body, req.payload, "a ver que sale de esto");
-
   LivingPlace.create({
     title,
-    owner: payload._id,
+    owner: userId,
     category,
     images,
     price,
@@ -122,11 +118,8 @@ router.post("/living-places/:id/message", (req, res) => {
   const { message, name, phone, email } = req.body;
 
   LivingPlace.findById(id)
-    .then(() => {
-      return Message.create({ livingPlace: id, message, name, phone, email })
-        .then((response) => res.json(response))
-        .catch((err) => res.status(500).json(err));
-    })
+    .then(() => Message.create({ livingPlace: id, message, name, phone, email }))
+    .then((response) => res.json(response))
     .catch((err) => res.status(500).json(err));
 });
 

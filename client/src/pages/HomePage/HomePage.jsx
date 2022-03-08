@@ -31,53 +31,35 @@ const [places, setPlaces] = useState([])
               <Col md={3}>
                 <CityCard
                   imageUrl="./../../images/newyork.jpeg"
-                  city="Madrid"
+                  city="New York"
                 />
               </Col>
               <Col md={3}>
-                <CityCard
-                  imageUrl="./../../images/berlin.jpeg"
-                  city="Berlin"
-                />
+                <CityCard imageUrl="./../../images/berlin.jpeg" city="Berlin" />
               </Col>
               <Col md={3}>
-                <CityCard
-                  imageUrl="./../../images/sydney.jpeg"
-                  city="Sydney"
-                />
+                <CityCard imageUrl="./../../images/sydney.jpeg" city="Sydney" />
               </Col>
               <Col md={3}>
-                <CityCard
-                  imageUrl="./../../images/bcn.jpeg"
-                  city="Barcelona"
-                />
+                <CityCard imageUrl="./../../images/bcn.jpeg" city="Barcelona" />
               </Col>
             </Row>
           </Carousel.Item>
           <Carousel.Item>
             <Row>
               <Col md={3}>
-                <CityCard
-                  imageUrl="./../../images/sydney.jpeg"
-                  city="Sydney"
-                />
+                <CityCard imageUrl="./../../images/sydney.jpeg" city="Sydney" />
               </Col>
               <Col md={3}>
-                <CityCard
-                  imageUrl="./../../images/bcn.jpeg"
-                  city="Barcelona"
-                />
+                <CityCard imageUrl="./../../images/bcn.jpeg" city="Barcelona" />
               </Col>
               <Col md={3}>
-                <CityCard
-                  imageUrl="./../../images/berlin.jpeg"
-                  city="Berlin"
-                />
+                <CityCard imageUrl="./../../images/berlin.jpeg" city="Berlin" />
               </Col>
               <Col md={3}>
                 <CityCard
                   imageUrl="./../../images/newyork.jpeg"
-                  city="Peru"
+                  city="New York"
                 />
               </Col>
             </Row>
@@ -85,92 +67,24 @@ const [places, setPlaces] = useState([])
         </Carousel>
         <h2 className="mt-5 mb-3">Travelers’ Choice</h2>
         <Row>
-         { places.map((place) => {
-           return(
+          {places.map((place) => {
+            return (
               <Col md={3}>
-              <HomeCard 
-              id={place._id}
-              price={place.price}
-              location={place.location}
-              title={place.title}
-              images={place.images}
-              >
-              </HomeCard>
+                <HomeCard
+                  id={place._id}
+                  price={place.price}
+                  location={place.location}
+                  title={place.title}
+                  images={place.images}
+                ></HomeCard>
               </Col>
-           )
+            );
           })}
-
-
         </Row>
-        {/* <Row className="mb-5">
-          <Col md={3}>
-            <HomeCard
-              id="1"
-              title="test1"
-              price={2}
-              location={{
-                province: "Madrid",
-                city: "Madrid",
-              }}
-              images={[
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-2_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-14_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-12_thumb.jpg",
-              ]}
-            />
-          </Col>
-          <Col md={3}>
-            <HomeCard
-              id="2"
-              title="test2"
-              price={2}
-              location={{
-                province: "Madrid",
-                city: "Madrid",
-              }}
-              images={[
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-12_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-2_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-14_thumb.jpg",
-              ]}
-            />
-          </Col>
-          <Col md={3}>
-            <HomeCard
-              id="3"
-              title="test3"
-              price={2}
-              location={{
-                province: "Almeria",
-                city: "Roquetas de mar",
-              }}
-              images={[
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-14_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-2_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-12_thumb.jpg",
-              ]}
-            />
-          </Col>
-          <Col md={3}>
-            <HomeCard
-              id="4"
-              title="test4"
-              price={7}
-              location={{
-                province: "Valencia",
-                city: "Valencia",
-              }}
-              images={[
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-18_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-14_thumb.jpg",
-                "https://gallery.tripxtrip.com/tripxtrip/hotel-12_thumb.jpg",
-              ]}
-            />
-          </Col>
-        </Row> */}
       </Container>
     </>
   );
 }
 
 export default HomePage;
+

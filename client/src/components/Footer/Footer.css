@@ -11,8 +11,11 @@ footer {
   z-index: 999;
 }
 
+
+
 footer ul {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
@@ -22,7 +25,8 @@ footer ul li {
 }
 
 footer ul li a {
-  padding-left: 50px;
+  /* padding-left: 50px; */
+  margin: 20px;
 }
 
 footer img {

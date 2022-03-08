@@ -5,8 +5,7 @@ const { isAuthenticated } = require("../middlewares/jwt.middleware");
 const User = require("../models/User.model");
 
 router.get("/", isAuthenticated, (req, res) => {
-  const { payload } = req;
-  const userId = payload._id;
+  const userId = req.payload._id;
 
   User.findById(userId)
     .select("firstName lastName email phone role image createdAt")
@@ -15,8 +14,7 @@ router.get("/", isAuthenticated, (req, res) => {
 });
 
 router.put("/", isAuthenticated, (req, res) => {
-  const { payload } = req;
-  const userId = payload._id;
+  const userId = req.payload._id;
   const { firstName, lastName, email, password, phone, image } = req.body;
   const data = {};
 
@@ -45,17 +43,8 @@ router.put("/", isAuthenticated, (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-router.delete("/", isAuthenticated, (req, res) => {
-  const { payload } = req;
-  const userId = payload._id;
-  User.findByIdAndDelete(userId)
-    .then((response) => res.json(response))
-    .catch((err) => res.status(500).json(err));
-});
-
 router.get("/living-places", isAuthenticated, (req, res) => {
-  const { payload } = req;
-  const userId = payload._id;
+  const userId = req.payload._id;
 
   LivingPlace.find({ owner: userId })
     .then((response) => res.json(response))
@@ -63,16 +52,12 @@ router.get("/living-places", isAuthenticated, (req, res) => {
 });
 
 router.get("/messages", isAuthenticated, (req, res) => {
-  const { payload } = req;
-  const userId = payload._id;
+  const userId = req.payload._id;
 
   LivingPlace.find({ owner: userId })
     .select("_id")
-    .then((ids) => {
-      return Message.find({ livingPlace: { $in: ids } })
-        .then((response) => res.json(response))
-        .catch((err) => res.status(500).json(err));
-    })
+    .then((ids) => Message.find({ livingPlace: { $in: ids } }))
+    .then((response) => res.json(response))
     .catch((err) => res.status(500).json(err));
 });
 

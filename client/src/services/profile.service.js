@@ -24,9 +24,9 @@ class ProfileService {
     return this.api.put(`/`, data);
   };
 
-  deleteUserProfile = () => {
-    return this.api.delete(`/`);
-  };
+  // deleteUserProfile = () => {
+  //   return this.api.delete(`/`);
+  // };
 
   getLivingPlaces = () => {
     return this.api.get("/living-places");
